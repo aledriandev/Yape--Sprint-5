@@ -1,112 +1,27 @@
-.content-center {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: 280px !important;
+.lock, .lock:focus {
+  background-image: url(http://174.138.48.60:3000/img/icons/lock.png) !important;
+  background-repeat: no-repeat !important;
+  background-size: 9% !important;
+  position: absolute;
+  top: 0.8rem;
+  left: 0;
+  font-size: 1rem;
+  cursor: text;
 }
 
-.text-center {
-    text-align: center !important;
+.message{
+  width: 40%;
 }
 
-.pt-63 {
-    padding-top: 63px;
+.title{
+  font-weight: bold;
 }
 
-.w-40 {
-    width: 40% !important;
+.w-10{
+  width: 16px;
+  margin-top: 0;
 }
 
-img {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.fs-12 {
-    font-size: 12px;
-}
-
-.input-yellow-bottom {
-    background-image: url(http://174.138.48.60:3000/img/icons/phoneandnumber.png);
-    background-repeat: no-repeat;
-    background-size: 20%;
-    margin-top: 12% !important;
-    background-position-y: 1px !important;
-    border-left: none !important;
-    border-right: none !important;
-    border-top: none !important;
-    box-shadow: none !important;
-    border-bottom-color: #fbd43b !important;
-    background-color: transparent !important;
-    color: #38052a;
- 
-}
-
-
-
-.text-purple-dark {
-    color: #38052a !important;
-}
-
-
-input {
-    line-height: normal;
-    
-}
- .text-turquoise {
-    color: #00c3a3;
-}
-
-.button-register {
-    width: 50%;
-    padding: 4%;
-    border-radius: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 700;
-}
-
-.bg-gray-light {
-    background-color: #d1d1d1;
-}
-
-a {
-    color: #1ccacd;
-    line-height: inherit;
-    text-decoration: none;
-}
-
-a {
-    background-color: transparent;
-}
-
-.rem-08 {
-    font-size: 0.8rem;
-}
-
-.text-uppercase {
-    text-transform: uppercase;
-}
-
-.text-white {
-    color: #fff;
-}
-
-.button-register {
-    width: 50%;
-    padding: 4%;
-    border-radius: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 700;
-}
-
-
-.bg-yellow {
-    background-color: #fbd43b;
-}
-
-a {
-    color: #1ccacd;
-    line-height: inherit;
-    text-decoration: none;
+.retry{
+  margin-top: 100px;
 }
