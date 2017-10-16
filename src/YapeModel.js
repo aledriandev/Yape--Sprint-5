@@ -8,8 +8,8 @@ class YapeModel {
       email: null,
       password: null,
       numberCard: "",
-      cardMonth: null,
-      cardYear: null,
+      cardMonth: "",
+      cardYear: "",
       passwordCard: '',
     }
     this.timer = null;
@@ -39,6 +39,7 @@ class YapeModel {
       console.log(this.user.numberCard);
     }
   }
+  
 }
 
 export default YapeModel;
