@@ -2,6 +2,7 @@
   "name": "yape",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://aqp20171679.github.io/Yape--Sprint-5"
   "dependencies": {
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.3",
