@@ -1,3 +1,6 @@
+img{
+  margin: 0;
+}
 .hello{
   background-color: #451e36;
 }
@@ -24,5 +27,37 @@
 
 .text-white{
   color: white;
+}
+
+bold{
   font-weight: bold;
+}
+
+.operations{
+  background-color: #38052a;
+}
+
+.row{
+  margin:0;
+}
+
+hr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+.operations.op{
+  padding: 3% 5% 2% 5%;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.show {
+  width: 6%;
+  float: right;
 }
