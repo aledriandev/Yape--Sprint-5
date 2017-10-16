@@ -46,7 +46,7 @@ class PhoneValidation extends React.Component {
 					<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}><center><Image className="spaceInit" src={phone} /></center></Col>
 				</Row>
 				<Row className="show-grid">
-					<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}><h5 className="fs-12">Para comenzar validemos tu número</h5></Col>
+					<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}><h5>Para comenzar validemos tu número</h5></Col>
 				</Row>
 				<Row className="show-grid">
 					<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}><p>Recibirás un SMS con un código de validación</p></Col>
