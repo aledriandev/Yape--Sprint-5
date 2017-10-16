@@ -14,13 +14,13 @@ import {
 	Input, Button
 } from 'react-materialize'
 
-const CreateUser = ({ model }) => {
-  return (
-    <Grid className="text-center" id="createUser">
+const Header = () => {
+	return(
+		<div>
 			<Row className="show-grid">
-				<Col xs={10} xsOffset={1}  sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<center><Image src="http://174.138.48.60:3000/img/icons/lockone.png" className="imgLockone" /></center>
-				</Col>
+			<Col xs={10} xsOffset={1}  sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+				<center><Image src="http://174.138.48.60:3000/img/icons/lockone.png" className="imgLockone" /></center>
+			</Col>
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
@@ -32,9 +32,17 @@ const CreateUser = ({ model }) => {
 					<span className="infoUserCU">Ingresa un nombre, email y clave de usuario</span>
 				</Col>
 			</Row>
+		</div>
+	);
+}
+
+const CreateUser = ({ model }) => {
+  return (
+    <Grid className="text-center" id="createUser">
+			<Header />
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<Input s={12} className="text-center userCU" placeholder="Nombre"/>
+					<Input type="text" s={12} className="text-center userCU" placeholder="Nombre"/>
 				</Col>
 			</Row>
 			<Row className="show-grid">
@@ -44,17 +52,16 @@ const CreateUser = ({ model }) => {
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<Input maxLength="6" type="password" s={12} className="text-center lockCU" placeholder="Password"/>
+					<Input type="password" s={12} className="text-center lockCU" placeholder="Password" maxLength="6"/>
 					<div className="noteCU">Cuida esta clave como oro, es tu acceso a Yape.</div>
 				</Col>
 			</Row>
-
 			<Row>
 				<Col className="btnsCU" xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 					{
 						!model.user.password
-          	? <NavLink to="/register-card" className="navCreateUser">Crear Cuenta</NavLink>
-          	: <Button className="btnCreateUser">Crear Cuenta</Button>
+						? <NavLink to="/register-card" className="navCreateUser">Crear Cuenta</NavLink>
+						: <Button className="btnCreateUser">Crear Cuenta</Button>
 					}
 				</Col>
 			</Row>
