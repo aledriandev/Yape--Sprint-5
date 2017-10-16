@@ -9,8 +9,11 @@ import {
 import {
 	Grid,
 	Row,
-	Col, Image, OverlayTrigger, Tooltip
-} from 'react-bootstrap'
+	Col,
+	Image,
+	OverlayTrigger,
+	Tooltip
+} from 'react-bootstrap';
 import './RegisterCard.css';
 import bcpCard from './images/bcpCard.png';
 import {
