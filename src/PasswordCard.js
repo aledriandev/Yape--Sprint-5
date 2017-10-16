@@ -10,12 +10,12 @@ const PasswordCard = ({ model }) => {
     <Grid className="text-center">
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1}  sm={8} smOffset={2} md={6} mdOffset={3} lg={6} lgOffset={3}>
-					<center><Image src={bcpCard}/></center>
+					<center><Image className="imgPasswordCard" src={bcpCard}/></center>
 				</Col>
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={6} lgOffset={3}>
-					<h5><b>Ingresa la clave de tu tarjeta</b></h5>
+					<h5 className="titlePasswordCard" >Ingresa la clave de tu tarjeta</h5>
 				</Col>
 			</Row>
 			<Row className="show-grid">
@@ -39,9 +39,9 @@ const PasswordCard = ({ model }) => {
 						{
 							model.user.passwordCard.length === 4 
 							?
-							<NavLink to={"/account"}><Button className="navRegisterCard" type="submit">REGISTRAR</Button></NavLink>
+							<NavLink to={"/account"}><Button className="navPasswordCard" type="submit">REGISTRAR</Button></NavLink>
 							: 
-							<Button className="btnRegisterCard" type="submit" disabled>REGISTRAR</Button>
+							<Button className="btnPasswordCard" type="submit">REGISTRAR</Button>
 						}
 					</Col>
 				</Row>	
