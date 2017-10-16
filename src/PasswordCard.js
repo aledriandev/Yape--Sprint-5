@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import {Grid, Row, Col, Form, Image, Button} from 'react-bootstrap';
-import {Input} from 'react-materialize';
+import {Grid, Row, Col, Form, Image} from 'react-bootstrap';
+import {Input, Button} from 'react-materialize';
 import './PasswordCard.css';
 import bcpCard from './images/bcpCard.png';
 
@@ -39,9 +39,9 @@ const PasswordCard = ({ model }) => {
 						{
 							model.user.passwordCard.length === 4 
 							?
-							<NavLink to={"/account"}><Button bsStyle="custom" type="submit">REGISTRAR</Button></NavLink>
+							<NavLink to={"/account"}><Button className="navRegisterCard" type="submit">REGISTRAR</Button></NavLink>
 							: 
-							<Button bsStyle="custom" type="submit" disabled>REGISTRAR</Button>
+							<Button className="btnRegisterCard" type="submit" disabled>REGISTRAR</Button>
 						}
 					</Col>
 				</Row>	
