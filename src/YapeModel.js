@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import {getUserData} from './GitHubApi';
-class Model {
+
+class YapeModel {
 	constructor () {
 		this.notify = null;
 		this.user = {
@@ -16,4 +15,4 @@ class Model {
   }
 }
 
-export default Model;
+export default YapeModel;
