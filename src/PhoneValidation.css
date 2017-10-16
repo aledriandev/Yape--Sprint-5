@@ -15,18 +15,22 @@
     vertical-align: middle;
 }
 
-
-
-/*clases de la etiqueta h5  */
-.validationH5 {
-    font-size: 1rem;
-    margin-bottom: 0rem;
-    margin-top: 0.5rem;
+img
+{
+    width: 50%;
+    margin-top: 25%;
+}
+.lockPasswordCard{
+    background-image: url(./images/lock.png);
+    background-repeat: no-repeat;
+    background-size: 7%;
 }
 
 
+/*clases de la etiqueta h5  */
+
 .fs-12 {
-    font-size: 12px;
+    font-size: 17px;
 }
 
 .input-yellow-bottom {
