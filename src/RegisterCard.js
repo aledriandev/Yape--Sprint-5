@@ -13,7 +13,11 @@ import {
 } from 'react-bootstrap'
 import './RegisterCard.css';
 import bcpCard from './images/bcpCard.png';
-import {Input} from 'react-materialize';
+import {
+	Input,
+	Button, 
+	Icon
+} from 'react-materialize';
 
 const RegisterCard = ({ model }) => {
   return (
@@ -52,6 +56,17 @@ const RegisterCard = ({ model }) => {
 						<Input className='text-center input-date' name='on' type='date' onChange={function(e, value) {}} />
 					</Col>
 				</Row>
+				<Row>
+					<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+						{model.user.password != null
+                ? <NavLink to="/password-card" className="navRegisterCard">
+                    Crear Cuenta
+                  </NavLink>
+                : <Button className="btnRegisterCard">Crear Cuenta</Button>
+						}
+					</Col>
+				</Row>
+				
 			</Grid>
   );
 };
