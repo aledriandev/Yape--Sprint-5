@@ -53,8 +53,8 @@ const RegisterCard = ({ model }) => {
 			<Row>
 				<Col className="btns" xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 					{
-						model.user.password
-          	? <NavLink to="/register-card" className="btnRegisterCard">Crear Cuenta</NavLink>
+						!model.user.password
+          	? <NavLink to="/register-card" className="navRegisterCard">Crear Cuenta</NavLink>
           	: <Button className="btnRegisterCard">Crear Cuenta</Button>
 					}
 				</Col>
