@@ -1,0 +1,52 @@
+img
+{
+    width: 40% !important;
+    margin-top: 20%;
+}
+
+.title{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.scan{
+    font-size: 1rem;
+    color: #00c3a3;
+    margin-bottom: 100px !important;
+}
+
+.row{
+    margin-bottom: 0 !important;
+}
+
+.date{
+    margin-top: 50px;
+}
+
+.input-date{
+    margin-top: 25px !important;
+}
+
+.date-group{
+    color: #8f8f8f;
+}
+
+.btnRegisterCard{
+    background-color: #d1d1d1;
+}
+
+.navRegisterCard{
+    background-color: #fbd43b;   
+}
+
+.card{
+    background-image: url(http://174.138.48.60:3000/img/icons/card.png) !important;
+    background-repeat: no-repeat !important;
+    background-size: 9% !important;
+    background-position-y: 9px !important;
+}
+
+.logoScan{
+    width: 30px !important;
+    margin-top: -6px !important;
+}
