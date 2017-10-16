@@ -1,25 +1,14 @@
 import React, {Component} from 'react';
 import {
-	BrowserRouter,
-	Route,
-	Switch,
-	NavLink,
-	Redirect
+	BrowserRouter, Route,	Switch,	NavLink, Redirect
 } from 'react-router-dom';
 import {
-	Grid,
-	Row,
-	Col,
-	Image,
-	OverlayTrigger,
-	Tooltip
+	Grid,	Row, Col, Image,	OverlayTrigger,	Tooltip
 } from 'react-bootstrap';
 import './RegisterCard.css';
 import bcpCard from './images/bcpCard.png';
 import {
-	Input,
-	Button, 
-	Icon
+	Input,	Button, 	Icon
 } from 'react-materialize';
 
 const RegisterCard = ({ model }) => {
@@ -27,7 +16,7 @@ const RegisterCard = ({ model }) => {
 		<Grid className="text-center">
     	<Row className="show-grid">
 				<Col xs={10} xsOffset={1}  sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<center><Image src={bcpCard} /></center>
+					<center><Image src={bcpCard} className="bcpCardRC" /></center>
 				</Col>
 			</Row>
 			<Row className="show-grid">
