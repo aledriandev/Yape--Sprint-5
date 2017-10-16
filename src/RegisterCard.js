@@ -31,7 +31,12 @@ const RegisterCard = ({ model }) => {
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<Input type="text" s={12} maxlength="16" className="text-center card" onKeyPress={(event) => {return event.charCode >= 48 && event.charCode <= 57}}/>
+					<Input type="text" 
+						s={12} 
+						maxlength="16" 
+						className="text-center card" 
+						value={model.user.numberCard}
+						onChange={e => model.validateNumberCard(e)}/>
 				</Col>
 			</Row>
 			<Row className="show-grid scan">
@@ -47,7 +52,10 @@ const RegisterCard = ({ model }) => {
 					<p className="date">Fecha de Vencimiento</p>
 				</Col>
 				<Col xs={6}>
-					<Input className='text-center input-date' name='on' type='date' onChange={function(e, value) {}} />
+					<Input className='text-center input-date' 
+						name='on' 
+						type='date' 
+						onChange={function(e, value) {}} />
 				</Col>
 			</Row>
 			<Row>

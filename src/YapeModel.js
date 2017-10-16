@@ -7,7 +7,7 @@ class YapeModel {
       name: null,
       email: null,
       password: null,
-      numberCard: '12345678',
+      numberCard: "",
       cardMonth: null,
       cardYear: null,
       passwordCard: '',
@@ -28,6 +28,15 @@ class YapeModel {
     {
       this.user.passwordCard = e.target.value;
       this.notify();
+    }
+  }
+  validateNumberCard(e)
+  {
+    if (!isNaN(e.target.value))
+    {
+      this.user.numberCard = e.target.value;
+      this.notify();
+      console.log(this.user.numberCard);
     }
   }
 }
