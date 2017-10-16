@@ -12,6 +12,8 @@ import {Input} from  'react-materialize';
 import {Grid, Row, Col} from  'react-bootstrap'
 
 const CodeValidation = ({ model }) => {
+	let timer = 20;
+	// setTimeout(()=>{(timer-1)},1000);
   return (
 		<div>
 			<Grid>
@@ -30,7 +32,9 @@ const CodeValidation = ({ model }) => {
 				</Row>
 				<Row className='retry'>
 					<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-						<div>Reintentar en <img src="http://174.138.48.60:3000/img/icons/clock.png" className="w-10" alt=""/> </div>
+						<div>Reintentar en <img src="http://174.138.48.60:3000/img/icons/clock.png" className="w-10" alt=""/> 
+							{timer}
+						</div>
 					</Col>
 				</Row>
 			</center>
