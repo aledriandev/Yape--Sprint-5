@@ -1,33 +1,54 @@
-#createUser .title{
+.imgLockone{
+    width: 40% !important;
+    margin-top: 20%;
+}
+
+.titleCU{
     font-weight: bold;
     font-size: 1.2em;
 }
 
-#createUser .infoUser{
+.infoUserCU{
     font-size: 13px;
     color: #8f8f8f;
 }
 
-#createUser .user, .user:focus {
+.userCU, .userCU:focus {
     background-image: url("http://174.138.48.60:3000/img/icons/user.png") !important;
     background-repeat: no-repeat !important;
     background-size: 13% !important;
 }
 
-#createUser .message, .message:focus {
+.messageCU, .messageCU:focus {
     background-image: url("http://174.138.48.60:3000/img/icons/message-gray.png") !important;
     background-repeat: no-repeat !important;
     background-size: 13% !important;
 }
 
-#createUser .lockCU {
+.lockCU {
     background-image: url("http://174.138.48.60:3000/img/icons/lock.png") !important;
     background-repeat: no-repeat !important;
     background-size: 10% !important;
 }
 
-#createUser .note{
+.noteCU{
     color: #d1d1d1 !important;
     font-size: 0.9rem;
     margin-top: 0px;    
 }
+
+.navCreateUser{
+    background-color: #fbd43b;
+    padding: 4%;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.btnCreateUser{
+
+}
+
+
