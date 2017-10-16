@@ -11,6 +11,7 @@ import './App.css';
 const Account = ({ model }) => {
   return (
     <h2>Account</h2>
+		
   );
 };
 
