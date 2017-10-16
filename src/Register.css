@@ -1,0 +1,51 @@
+/* Carousel Maca*/
+.carousel .indicators {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    background-color: transparent;
+}
+
+.carousel .indicators .indicator-item.active {
+    background-color: red;
+}
+
+/* Fin Carousel Maca*/
+
+/*Boton Paulina*/
+.btn-registro{
+	background-color: #fbd43b;
+	width: 300px;
+}
+
+/* textos angela*/
+.carousel{
+    height: 570px !important;
+}
+
+.indicators{
+    top: 510px;
+}
+
+.carousel .indicators .indicator-item {
+    background-color: rgba(silver, 0.5);
+}
+
+.textos{
+    color: black;
+    font-size: 10px;
+
+    
+}
+.textos h2{
+    font-weight: bolder; 
+ }
+
+ .textos p{
+     font-size: 10px;
+ }
+
+
