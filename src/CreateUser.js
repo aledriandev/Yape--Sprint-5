@@ -16,7 +16,7 @@ import {
 
 const CreateUser = ({ model }) => {
   return (
-    <Grid className="text-center">
+    <Grid className="text-center" id="createUser">
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1}  sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 					<center><Image src="http://174.138.48.60:3000/img/icons/lockone.png" /></center>
@@ -44,15 +44,16 @@ const CreateUser = ({ model }) => {
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<Input type="password" s={12} maxLength="6" className="text-center lock " placeholder="Contraseña" />
-					<span className="note">Cuida esta clave como oro, es tu acceso a Yape.</span>
+					<Input maxLength="6" type="password" s={12} className="text-center lockCU" placeholder="Password"/>
+					<div className="note">Cuida esta clave como oro, es tu acceso a Yape.</div>
 				</Col>
 			</Row>
+
 			<Row>
 				<Col className="btns" xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 					{
 						model.user.password
-          	? <NavLink to="/-card" className="btnRegisterCard">Crear Cuenta</NavLink>
+          	? <NavLink to="/register-card" className="btnRegisterCard">Crear Cuenta</NavLink>
           	: <Button className="btnRegisterCard">Crear Cuenta</Button>
 					}
 				</Col>

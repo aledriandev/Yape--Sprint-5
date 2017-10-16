@@ -42,7 +42,7 @@ const RegisterCard = ({ model }) => {
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<Input type="number" s={12} maxLength="16" className="text-center card" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57"/>
+					<Input type="text" s={12} maxlength="16" className="text-center card" onKeyPress={(event) => {return event.charCode >= 48 && event.charCode <= 57}}/>
 				</Col>
 			</Row>
 			<Row className="show-grid scan">
