@@ -1,0 +1,28 @@
+.hello{
+  background-color: #451e36;
+}
+
+.img-happy{
+  width: 50%;
+  margin-top: 30px;
+}
+
+.eye {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0;
+}
+
+.w-7 {
+  width: 7% !important;
+  margin: 0;
+}
+
+.text-turquoise {
+  color: #00c3a3;
+}
+
+.text-white{
+  color: white;
+  font-weight: bold;
+}
