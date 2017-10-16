@@ -20,7 +20,7 @@ class YapeModel {
   }
   hidePartCard()
   {
-    return ('****' + this.user.numberCard.slice(4));
+    return ('************' + this.user.numberCard.slice(-4));
   }
   validationPasswordCard(e)
   {
