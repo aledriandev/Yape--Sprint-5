@@ -20,11 +20,23 @@
 }
 
 .date{
-    margin-top: 50px;
+    margin-top: 27px;
+    font-size: 100%;
 }
 
 .input-date{
-    margin-top: 25px !important;
+    /* margin-top: 25px !important; */
+    
+}
+.slash{
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-top: 27px !important;
+}
+
+.dates{
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .date-group{
@@ -32,12 +44,12 @@
 }
 
 .btnRegisterCard, .btnRegisterCard:hover{
-    margin-top: 20px;
+    margin-top: -20px;
     background-color: #d1d1d1;
     color: #fff;  
 }
 
-.navRegisterCard{
+.navRegisterCard, .navRegisterCard:hover{
     background-color: #fbd43b;   
     border-radius: 2px;
     display: inline-block;
@@ -52,14 +64,9 @@
     letter-spacing: .5px;
     transition: .2s ease-out;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-    margin-top: 20px;
+    margin-top: -20px;
 }
 
-.navRegisterCard:hover{
-    text-decoration: none;
-    color: #fff;
-    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
-}
 .card{
     background-image: url(http://174.138.48.60:3000/img/icons/card.png) !important;
     background-repeat: no-repeat !important;
