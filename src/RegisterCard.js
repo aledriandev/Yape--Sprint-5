@@ -39,12 +39,13 @@ const RegisterCard = ({ model }) => {
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<Input s={12} maxLength="16" className="text-center" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57"/>
+					<Input s={12} maxLength="16" className="text-center card" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57"/>
 				</Col>
 			</Row>
 			<Row className="show-grid scan">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<span>Escanear Tarjeta </span>
+					<Image src="http://174.138.48.60:3000/img/icons/scan.png" className="logoScan"/>
+					<span>      Escanear Tarjeta</span>
 				</Col>
 			</Row>
 			<Row className="show-grid date-group">
