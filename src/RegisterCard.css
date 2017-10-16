@@ -50,3 +50,25 @@ img
     width: 30px !important;
     margin-top: -6px !important;
 }
+
+.link{
+    background-color: transparent;
+    color: inherit;
+    border: none !important;
+    text-transform: none;
+    box-shadow: none;
+    padding: 0 1rem;
+}
+
+.link:hover{
+    background-color: transparent;
+    color: inherit;
+    border: none !important;
+    text-transform: none;
+    box-shadow: none;
+    padding: 0 1rem;
+}
+
+.btns{
+    margin-top: 40px;
+}

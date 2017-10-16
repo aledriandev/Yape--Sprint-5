@@ -9,8 +9,11 @@ import {
 import {
 	Grid,
 	Row,
-	Col, Image
-} from 'react-bootstrap'
+	Col,
+	Image,
+	OverlayTrigger,
+	Tooltip
+} from 'react-bootstrap';
 import './RegisterCard.css';
 import bcpCard from './images/bcpCard.png';
 import {
@@ -39,13 +42,15 @@ const RegisterCard = ({ model }) => {
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<Input s={12} maxLength="16" className="text-center card" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57"/>
+					<Input type="text" s={12} maxlength="16" className="text-center card" onKeyPress={(event) => {return event.charCode >= 48 && event.charCode <= 57}}/>
 				</Col>
 			</Row>
 			<Row className="show-grid scan">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 					<Image src="http://174.138.48.60:3000/img/icons/scan.png" className="logoScan"/>
-					<span>      Escanear Tarjeta</span>
+					<OverlayTrigger placement="bottom" overlay={<Tooltip id="tooltip">No disponible en este momento</Tooltip>}>
+      			<Button bsStyle="default" className="link">Escanear Tarjeta</Button>
+    			</OverlayTrigger>
 				</Col>
 			</Row>
 			<Row className="show-grid date-group">
@@ -57,10 +62,10 @@ const RegisterCard = ({ model }) => {
 				</Col>
 			</Row>
 			<Row>
-				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+				<Col className="btns" xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 					{
 						model.user.password
-          	? <NavLink to="/password-card" className="btnRegisterCard">Crear Cuenta</NavLink>
+          	? <NavLink to="/register-card" className="btnRegisterCard">Crear Cuenta</NavLink>
           	: <Button className="btnRegisterCard">Crear Cuenta</Button>
 					}
 				</Col>
