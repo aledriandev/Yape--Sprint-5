@@ -17,11 +17,13 @@
   font-weight: bold;
 }
 
+.retry{
+  margin-top: 100px;
+}
+
 .w-10{
   width: 16px;
   margin-top: 0;
 }
 
-.retry{
-  margin-top: 100px;
-}
+
