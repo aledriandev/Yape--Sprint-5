@@ -36,7 +36,7 @@ const PasswordCard = ({ model }) => {
 				</Row>
 				<Row className="show-grid">
 					<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-						<Button type="submit">REGISTRAR</Button>
+						<NavLink to={"/send-code"}><Button type="submit">REGISTRAR</Button></NavLink>
 					</Col>
 				</Row>	
 			</Form>
