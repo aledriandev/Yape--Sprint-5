@@ -1,63 +1,77 @@
-img{
-  margin: 0;
+.ac-account{
+  /* height: 100hv !important; */
+  background-color: #38052a;
+  overflow: auto;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
-.hello{
-  background-color: #451e36;
+.ac-hello{
+  background-color: #451e36 !important;
 }
 
-.img-happy{
+.ac-img-happy{
   width: 50%;
   margin-top: 30px;
 }
 
-.eye {
+.ac-eye {
   display: inline-block;
   vertical-align: middle;
   margin-bottom: 0;
 }
 
-.w-7 {
+.ac-w-7 {
   width: 7% !important;
   margin: 0;
 }
 
-.text-turquoise {
+.ac-text-turquoise {
   color: #00c3a3;
 }
 
-.text-white{
+.ac-text-white{
   color: white;
 }
 
-bold{
+.ac-bold{
   font-weight: bold;
 }
 
-.operations{
+.ac-operations{
   background-color: #38052a;
 }
 
-.row{
+.ac-account>.row{
   margin:0;
 }
 
-hr {
+.ac-account>hr {
   margin-top: 0px;
   margin-bottom: 0px;
   border: 0;
   border-top: 1px solid #eee;
 }
 
-.operations.op{
+.ac-operations.ac-op{
   padding: 3% 5% 2% 5%;
   border-bottom: 1px solid #d1d1d1;
 }
 
-.text-left{
-  text-align: left;
+.ac-show {
+  width: 6% !important;
+  float: right;
+  margin-top: 0;
 }
 
-.show {
-  width: 6%;
-  float: right;
+.ac-img-icon{
+  width: 100% !important;
+}
+
+.ac-mg-20{
+  margin-top: 20%;
+}
+
+.row.ac-pd-20{
+  padding: 10% 0 0 0;
 }
