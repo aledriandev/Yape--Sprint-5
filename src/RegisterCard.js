@@ -75,7 +75,7 @@ const RegisterCard = ({ model }) => {
 				<Col className="btns" xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 					{
 						model.activeNextRegisterCard
-          				? <NavLink to="/register-card" className="navRegisterCard">Crear Cuenta</NavLink>
+          				? <NavLink to="/password-card" className="navRegisterCard">Crear Cuenta</NavLink>
           				: <Button className="btnRegisterCard">Crear Cuenta</Button>
 					}
 				</Col>
