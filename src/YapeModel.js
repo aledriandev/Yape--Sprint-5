@@ -12,6 +12,7 @@ class YapeModel {
       cardYear: null,
       passwordCard: '',
     }
+    this.timer = null;
   }
 	subscribe (render) {
     this.notify = render;
