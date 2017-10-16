@@ -42,7 +42,7 @@ const RegisterCard = ({ model }) => {
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<Input s={12} maxLength="16" className="text-center card" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57"/>
+					<Input type="number" s={12} maxLength="16" className="text-center card" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57"/>
 				</Col>
 			</Row>
 			<Row className="show-grid scan">
@@ -65,7 +65,7 @@ const RegisterCard = ({ model }) => {
 				<Col className="btns" xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 					{
 						model.user.password
-          	? <NavLink to="/password-card" className="btnRegisterCard">Crear Cuenta</NavLink>
+          	? <NavLink to="/register-card" className="btnRegisterCard">Crear Cuenta</NavLink>
           	: <Button className="btnRegisterCard">Crear Cuenta</Button>
 					}
 				</Col>

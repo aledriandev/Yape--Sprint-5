@@ -11,7 +11,7 @@ import {
 	Grid, Row, Col, Image
 } from 'react-bootstrap';
 import {
-	Input
+	Input, Button
 } from 'react-materialize'
 
 const CreateUser = ({ model }) => {
@@ -34,18 +34,27 @@ const CreateUser = ({ model }) => {
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<Input s={12} className="text-center user" placeholder="Nombre" onkeypress="return event.charCode >= 65 &amp;&amp; event.charCode <= 122"/>
+					<Input s={12} className="text-center user" placeholder="Nombre"/>
 				</Col>
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<Input type="email" s={12} className="text-center message" placeholder="Email" onkeypress="return event.charCode >= 65 &amp;&amp; event.charCode <= 122"/>
+					<Input type="email" s={12} className="text-center message" placeholder="Email"/>
 				</Col>
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<Input type="password" s={12} maxLength="6" className="text-center lock " placeholder="Contraseña" onkeypress="return event.charCode >= 65 &amp;&amp; event.charCode <= 122"/>
+					<Input type="password" s={12} maxLength="6" className="text-center lock " placeholder="Contraseña" />
 					<span className="note">Cuida esta clave como oro, es tu acceso a Yape.</span>
+				</Col>
+			</Row>
+			<Row>
+				<Col className="btns" xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+					{
+						model.user.password
+          	? <NavLink to="/-card" className="btnRegisterCard">Crear Cuenta</NavLink>
+          	: <Button className="btnRegisterCard">Crear Cuenta</Button>
+					}
 				</Col>
 			</Row>
 		</Grid>
