@@ -1,0 +1,63 @@
+img{
+  margin: 0;
+}
+.hello{
+  background-color: #451e36;
+}
+
+.img-happy{
+  width: 50%;
+  margin-top: 30px;
+}
+
+.eye {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0;
+}
+
+.w-7 {
+  width: 7% !important;
+  margin: 0;
+}
+
+.text-turquoise {
+  color: #00c3a3;
+}
+
+.text-white{
+  color: white;
+}
+
+bold{
+  font-weight: bold;
+}
+
+.operations{
+  background-color: #38052a;
+}
+
+.row{
+  margin:0;
+}
+
+hr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+.operations.op{
+  padding: 3% 5% 2% 5%;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.show {
+  width: 6%;
+  float: right;
+}

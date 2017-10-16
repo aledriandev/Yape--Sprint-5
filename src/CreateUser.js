@@ -6,11 +6,59 @@ import {
 	NavLink,
 	Redirect
 } from 'react-router-dom'
-import './App.css';
+import './CreateUser.css';
+import {
+	Grid, Row, Col, Image
+} from 'react-bootstrap';
+import {
+	Input, Button
+} from 'react-materialize'
 
 const CreateUser = ({ model }) => {
   return (
-    <h2>CreateUser</h2>
+    <Grid className="text-center" id="createUser">
+			<Row className="show-grid">
+				<Col xs={10} xsOffset={1}  sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+					<center><Image src="http://174.138.48.60:3000/img/icons/lockone.png" /></center>
+				</Col>
+			</Row>
+			<Row className="show-grid">
+				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+					<h5 className="title">Crea tu usuario Yape</h5>
+				</Col>
+			</Row>
+			<Row className="show-grid">
+				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+					<span className="infoUser">Ingresa un nombre, email y clave de usuario</span>
+				</Col>
+			</Row>
+			<Row className="show-grid">
+				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+					<Input s={12} className="text-center user" placeholder="Nombre"/>
+				</Col>
+			</Row>
+			<Row className="show-grid">
+				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+					<Input type="email" s={12} className="text-center message" placeholder="Email"/>
+				</Col>
+			</Row>
+			<Row className="show-grid">
+				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+					<Input maxLength="6" type="password" s={12} className="text-center lockCU" placeholder="Password"/>
+					<div className="note">Cuida esta clave como oro, es tu acceso a Yape.</div>
+				</Col>
+			</Row>
+
+			<Row>
+				<Col className="btns" xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+					{
+						model.user.password
+          	? <NavLink to="/register-card" className="btnRegisterCard">Crear Cuenta</NavLink>
+          	: <Button className="btnRegisterCard">Crear Cuenta</Button>
+					}
+				</Col>
+			</Row>
+		</Grid>
   );
 };
 
