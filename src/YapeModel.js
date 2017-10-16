@@ -15,7 +15,7 @@ class YapeModel {
     this.activeNextRegisterCard = false;
     this.timer = null;
   }
-	subscribe (render) {
+  subscribe (render) {
     this.notify = render;
     this.notify();
   }
@@ -75,6 +75,7 @@ class YapeModel {
       this.activeNextRegisterCard = true;
     }
   }
+
 }
 
 export default YapeModel;
