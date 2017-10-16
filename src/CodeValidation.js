@@ -18,21 +18,21 @@ const CodeValidation = ({ model }) => {
 		<div>
 			<Grid>
 			<center>
-				<Row className="show-grid">
-					<Col xs={10} xsOffset={1}  sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-						<img className='message' src="http://174.138.48.60:3000/img/icons/message.png"/>
-						<h5 className='title'>Ahora ingresa tu código</h5>
-						<p>Enviamos un mensaje de texto al numero (escribir123456)</p>
-					</Col>
-				</Row>
 				<Row>
-					<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-						<Input placeholder="- - - - - -" s={12} className="input-gray-soft-bottom text-center lock" maxLength="6"/>
+					<Col xs={10} xsOffset={1}  sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+						<img className='cv-message' src="http://174.138.48.60:3000/img/icons/message.png"/>
+						<h5 className='cv-title'>Ahora ingresa tu código</h5>
+						<p>Enviamos un mensaje de texto al numero (escribir 123456)</p>
 					</Col>
 				</Row>
-				<Row className='retry'>
+				<Row className="show-grid">
 					<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-						<div>Reintentar en <img src="http://174.138.48.60:3000/img/icons/clock.png" className="w-10" alt=""/> 
+						<Input type="password" s={12} className="text-center cv-lock" maxLength="6" placeholder="-  -  -  -  -  -"/>
+					</Col>
+				</Row>
+				<Row className='cv-retry'>
+					<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+						<div>Reintentar en <img src="http://174.138.48.60:3000/img/icons/clock.png" className="cv-w-10" alt=""/> 
 							{timer}
 						</div>
 					</Col>
