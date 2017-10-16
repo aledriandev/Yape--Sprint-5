@@ -1,12 +1,7 @@
-import React, {Component} from 'react';
-import {
-	BrowserRouter,
-	Route,
-	Switch,
-	NavLink,
-	Redirect
-} from 'react-router-dom';
-import {Grid, Row, Col, Form, FormGroup, InputGroup, FormControl, Image, Button} from 'react-bootstrap';
+import React from 'react';
+import {NavLink} from 'react-router-dom';
+import {Grid, Row, Col, Form, Image, Button} from 'react-bootstrap';
+import {Input} from 'react-materialize';
 import './PasswordCard.css';
 import bcpCard from './images/bcpCard.png';
 
@@ -14,29 +9,40 @@ const PasswordCard = ({ model }) => {
   return (
     <Grid className="text-center">
 			<Row className="show-grid">
-				<Col xs={10} xsOffset={1}  sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}><center><Image src={bcpCard} /></center></Col>
+				<Col xs={10} xsOffset={1}  sm={8} smOffset={2} md={6} mdOffset={3} lg={6} lgOffset={3}>
+					<center><Image src={bcpCard}/></center>
+				</Col>
 			</Row>
 			<Row className="show-grid">
-				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}><h4>Ingresa la clave de tu tarjeta</h4></Col>
+				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={6} lgOffset={3}>
+					<h5><b>Ingresa la clave de tu tarjeta</b></h5>
+				</Col>
 			</Row>
 			<Row className="show-grid">
-				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}><p>Tarjeta</p></Col>
+				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={6} lgOffset={3}>
+					<p>Tarjeta <b>{model.hidePartCard()}</b></p>
+				</Col>
 			</Row>
 			<Form>
 				<Row className="show-grid">
-					<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-						<FormGroup controlId="formValidationSuccess4" validationState="success">
-							<InputGroup>
-								<InputGroup.Addon><i class="fa fa-lock" aria-hidden="true"></i></InputGroup.Addon>
-								<FormControl type="password" placeholder="* * * *" maxLength="4"/>
-							</InputGroup>
-							<FormControl.Feedback />
-						</FormGroup>
+					<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={6} lgOffset={3}>
+							<Input type="password" 
+								placeholder="* * * *" 
+								maxLength="4" 
+								className="text-center lockPasswordCard" 
+								value={model.user.passwordCard}
+								onChange={e => model.validationPasswordCard(e)}/>
 					</Col>							
 				</Row>
 				<Row className="show-grid">
-					<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-						<Button type="submit">REGISTRAR</Button>
+					<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={6} lgOffset={3}>
+						{
+							model.user.passwordCard.length === 4 
+							?
+							<NavLink to={"/send-code"}><Button bsStyle="custom" type="submit">REGISTRAR</Button></NavLink>
+							: 
+							<Button bsStyle="custom" type="submit" disabled>REGISTRAR</Button>
+						}
 					</Col>
 				</Row>	
 			</Form>
