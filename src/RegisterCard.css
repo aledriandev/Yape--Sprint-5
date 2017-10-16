@@ -36,5 +36,17 @@ img
 }
 
 .navRegisterCard{
-    background-color: #fbd43b;
+    background-color: #fbd43b;   
+}
+
+.card{
+    background-image: url(http://174.138.48.60:3000/img/icons/card.png) !important;
+    background-repeat: no-repeat !important;
+    background-size: 9% !important;
+    background-position-y: 9px !important;
+}
+
+.logoScan{
+    width: 30px !important;
+    margin-top: -6px !important;
 }
