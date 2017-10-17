@@ -17,6 +17,8 @@ class YapeModel {
     this.activeNextRegisterCard = false;
     this.nextPage = false;
     this.nextCreateUser = false;
+    this.emailValid = false;
+  
   }
 	subscribe (render) {
     this.notify = render;
@@ -106,11 +108,11 @@ class YapeModel {
   validateEmail(e)
   {
     const emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-    if (emailRegex.test(e.target.value)) 
-    {
-      this.user.email = e.target.value;
-      this.notify();
-    } 
+    this.user.email = e.target.value;
+			if (emailRegex.test(this.user.email)) {
+          this.emailValid = true;
+      }
+      this.notify(); 
   }
   validatePassword(e)
   {
@@ -123,7 +125,7 @@ class YapeModel {
   }
   validateAllUser(e)
   {
-    if((this.user.password.length == 6) && (this.user.name.length >= 2))
+    if((this.user.password.length == 6) && (this.user.name.length >= 2) && (this.emailValid == true))
     {
       this.nextCreateUser = true;
     } else 
