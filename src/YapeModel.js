@@ -4,9 +4,9 @@ class YapeModel {
 		this.user = {
       phone: null,
       passwordSMS: null,
-      name: null,
-      email: null,
-      password: null,
+      name: "",
+      email: "",
+      password: "",
       numberCard: "",
       cardMonth: "",
       cardYear: "",
@@ -36,29 +36,36 @@ class YapeModel {
     if (!isNaN(e.target.value))
     {
       this.user.numberCard = e.target.value;
-      console.log(this.user.numberCard.length)
       this.isCompleteRegisterCard();
       this.notify();
     }
   }
   getCardMonth(e)
   {
-    if(!isNaN(e.target.value))
+    let month = parseInt(e.target.value);
+    if(!isNaN(month))
     {
-      this.user.cardMonth = e.target.value;
-      console.log(this.user.cardMonth.length)
-      this.isCompleteRegisterCard();
-      this.notify();
+        if((month > 0) && (month < 13))
+        {
+          this.user.cardMonth = month;
+          this.isCompleteRegisterCard();
+          console.log(month);
+          this.notify();
+        } 
     }
+    this.notify();
   }
   getCardYear(e)
   {
-    if(!isNaN(e.target.value))
+    let year = parseInt(e.target.value);
+    if(!isNaN(year))
     {
-      this.user.cardYear = e.target.value;
-      console.log(this.user.cardYear)
-      this.isCompleteRegisterCard();
-      this.notify();
+      if((year > 16) && (year > 0))
+      {
+        this.user.cardYear = e.target.value;
+        this.isCompleteRegisterCard();
+        this.notify();
+      } 
     }
   }
   isCompleteRegisterCard()

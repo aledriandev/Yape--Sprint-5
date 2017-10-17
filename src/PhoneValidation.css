@@ -5,7 +5,7 @@
 }
 
 .spaceInit {
-    padding-top: 63px;
+    padding-top: 20px;
 }
 
 /*clase de la imagen  */
@@ -29,9 +29,9 @@ img
 
 /*clases de la etiqueta h5  */
 
-.fs-12 {
-  font-weight: bold;
-
+.title{
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 .input-yellow-bottom {
@@ -97,4 +97,8 @@ a {
     color: #1ccacd;
     line-height: inherit;
     text-decoration: none;
+}
+
+.btns{
+    margin-top: 40px;
 }
