@@ -75,6 +75,32 @@ class YapeModel {
       this.activeNextRegisterCard = true;
     }
   }
+  saveInfo()
+  {
+    localStorage.setItem(this.user.phone, JSON.stringify(this.user));
+    let guardado = localStorage.getItem(this.user.phone);
+    guardado = JSON.parse(guardado);
+    console.log('objetoObtenido: ', guardado.passwordCard);
+  }
+  decrement () {
+    this.timer = (this.timer - 1);
+    this.notify();
+  }
+  validationSMS (e) {
+    if (!isNaN(e.target.value))
+    {
+      this.user.passwordSMSuser = e.target.value;
+      console.log(this.user.passwordSMS.length)
+      this.isVerificateSMS();
+      this.notify();
+    }
+  }
+  isVerificateSMS() {
+    if(this.user.passwordSMSuser == this.user.passwordSMS)
+    {
+      this.nextPage = true;
+    }
+  }
 }
 
 export default YapeModel;
