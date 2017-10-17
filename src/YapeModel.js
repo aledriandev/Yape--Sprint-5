@@ -18,7 +18,6 @@ class YapeModel {
     this.nextPage = false;
     this.nextCreateUser = false;
     this.emailValid = false;
-  
   }
 	subscribe (render) {
     this.notify = render;
@@ -134,5 +133,6 @@ class YapeModel {
     }
   }
 }
+
 
 export default YapeModel;
