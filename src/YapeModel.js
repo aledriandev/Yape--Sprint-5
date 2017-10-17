@@ -3,17 +3,19 @@ class YapeModel {
 		this.notify = null;
 		this.user = {
       phone: null,
-      passwordSMS: null,
-      name: null,
-      email: null,
-      password: null,
+      passwordSMSuser: null,
+      name: "",
+      email: "",
+      password: "",
       numberCard: "",
       cardMonth: "",
       cardYear: "",
       passwordCard: '',
+      passwordSMS: Math.round(Math.random()*(999999-100000)+100000),
     }
+    this.timer = 20;
     this.activeNextRegisterCard = false;
-    this.timer = null;
+    this.nextPage = false;
   }
 	subscribe (render) {
     this.notify = render;
@@ -28,7 +30,6 @@ class YapeModel {
     if (!isNaN(e.target.value))
     {
       this.user.passwordCard = e.target.value;
-      localStorage.setItem("passwordCard", this.user.passwordCard);
       this.notify();
     }
   }
@@ -37,7 +38,6 @@ class YapeModel {
     if (!isNaN(e.target.value))
     {
       this.user.numberCard = e.target.value;
-      localStorage.setItem("numberCard", this.user.numberCard);      
       this.isCompleteRegisterCard();
       this.notify();
     }
@@ -79,10 +79,29 @@ class YapeModel {
   }
   saveInfo()
   {
-    localStorage.setItem("user1", JSON.stringify(this.user));
-    let guardado = localStorage.getItem('user1');
+    localStorage.setItem(this.user.phone, JSON.stringify(this.user));
+    let guardado = localStorage.getItem(this.user.phone);
     guardado = JSON.parse(guardado);
     console.log('objetoObtenido: ', guardado.passwordCard);
+  }
+  decrement () {
+    this.timer = (this.timer - 1);
+    this.notify();
+  }
+  validationSMS (e) {
+    if (!isNaN(e.target.value))
+    {
+      this.user.passwordSMSuser = e.target.value;
+      console.log(this.user.passwordSMS.length)
+      this.isVerificateSMS();
+      this.notify();
+    }
+  }
+  isVerificateSMS() {
+    if(this.user.passwordSMSuser == this.user.passwordSMS)
+    {
+      this.nextPage = true;
+    }
   }
 }
 
