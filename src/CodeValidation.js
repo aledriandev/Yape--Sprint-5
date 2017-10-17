@@ -14,16 +14,17 @@ import { Grid, Row, Col } from 'react-bootstrap'
 const CodeValidation = ({ model }) => {
 	let numer;
 	const counter = () => {
-		numer=setInterval(()=>{
+		numer = setInterval(()=>{
 			model.timer --;
 			model.notify()
+			console.log(model.timer);
+			
 		}, 5000);
 	}
 	const stop = () => {
 		clearInterval(numer);
 	}
-	// counter();
-	console.log(model.timer);
+	counter();
 	return (
 		<div>
 			<Grid>
