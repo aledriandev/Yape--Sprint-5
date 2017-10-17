@@ -237,6 +237,8 @@ class YapeModel {
   isCompleteRegisterPhone() {
     if ((this.activeCheckboxPhone == true) && (this.user.phone.length == 9)) {
       this.activeNextRegisterPhone = true;
+    } else{
+      this.activeNextRegisterPhone = false;
     }
   }
 }
