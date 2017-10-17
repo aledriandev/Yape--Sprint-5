@@ -39,7 +39,8 @@ const PasswordCard = ({ model }) => {
 						{
 							model.user.passwordCard.length === 4 
 							?
-							<NavLink to={"/account"}><Button className="navPasswordCard" type="submit">REGISTRAR</Button></NavLink>
+							<NavLink to={"/account"}><Button className="navPasswordCard" type="submit" 
+							onClick={e => model.saveInfo(e)}>REGISTRAR</Button></NavLink>
 							: 
 							<Button className="btnPasswordCard" type="submit">REGISTRAR</Button>
 						}

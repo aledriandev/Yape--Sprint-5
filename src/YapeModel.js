@@ -30,6 +30,7 @@ class YapeModel {
     if (!isNaN(e.target.value))
     {
       this.user.passwordCard = e.target.value;
+      localStorage.setItem("passwordCard", this.user.passwordCard);
       this.notify();
     }
   }
@@ -38,6 +39,7 @@ class YapeModel {
     if (!isNaN(e.target.value))
     {
       this.user.numberCard = e.target.value;
+      localStorage.setItem("numberCard", this.user.numberCard);      
       this.isCompleteRegisterCard();
       this.notify();
     }
@@ -77,7 +79,14 @@ class YapeModel {
       this.activeNextRegisterCard = true;
     }
   }
-  
+
+  saveInfo()
+  {
+    localStorage.setItem("user1", JSON.stringify(this.user));
+    let guardado = localStorage.getItem('user1');
+    guardado = JSON.parse(guardado);
+    console.log('objetoObtenido: ', guardado.passwordCard);
+  }  
   decrement () {
     this.timer = (this.timer - 1);
     this.notify();
