@@ -12,7 +12,7 @@ import {
 	Input, Button, Icon
 } from 'react-materialize';
 
-import { Grid, Row, Col, Form, FormGroup, InputGroup, FormControl, Image, Checkbox } from 'react-bootstrap';
+import { Grid, Row, Col, Image } from 'react-bootstrap';
 
 const PhoneValidation = ({ model }) => {
 
@@ -44,11 +44,9 @@ const PhoneValidation = ({ model }) => {
 			<Row >
 				<Col className="btns" xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 					{
-						model.activeNextRegisterPhone ?
-							<NavLink to={"/code-validation"} className="block button-register bg-yellow text-white">CONTINUAR</NavLink>
-							:
-							<Button className="button-register bg-gray-light text-white">CONTINUAR</Button>
-							
+						model.activeNextRegisterPhone 
+							    ? <NavLink to="/code-validation" className="navPhoneValidation">Continuar</NavLink>
+          				: <Button className="btnPhoneValidation">Continuar</Button>
 					}
 				</Col>
 			</Row>

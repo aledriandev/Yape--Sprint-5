@@ -2,7 +2,7 @@ class YapeModel {
 	constructor () {
 		this.notify = null;
 		this.user = {
-      phone: null,
+      phone: "",
       passwordSMSuser: null,
       name: "",
       email: "",
@@ -18,6 +18,8 @@ class YapeModel {
     this.nextPage = false;
     this.nextCreateUser = false;
     this.emailValid = false;
+    this.activeCheckboxPhone = undefined;
+    this.activeNextRegisterPhone = false;
   }
 	subscribe (render) {
     this.notify = render;
@@ -131,6 +133,27 @@ class YapeModel {
     {
       this.nextCreateUser = false;
     }
+  }
+  validateNumberPhone(e){
+    if(!isNaN(e.target.value))
+      {
+        this.user.phone = e.target.value;
+        console.log(this.user.phone.length)
+        this.isCompleteRegisterPhone();
+        this.notify();
+      }
+  }
+  checkboxPhone(e){	
+    this.activeCheckboxPhone = e.target.checked;
+    this.isCompleteRegisterPhone();
+    this.notify();
+    console.log(this.activeCheckboxPhone)
+  }
+
+  isCompleteRegisterPhone(){
+    if((this.activeCheckboxPhone == true)&&(this.user.phone.length == 9)){
+      this.activeNextRegisterPhone = true;
+    }   
   }
 }
 
