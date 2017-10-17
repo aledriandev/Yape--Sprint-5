@@ -16,6 +16,7 @@ class YapeModel {
     this.timer = 20;
     this.activeNextRegisterCard = false;
     this.nextPage = false;
+    this.nextCreateUser = false;
   }
 	subscribe (render) {
     this.notify = render;
@@ -44,30 +45,20 @@ class YapeModel {
   }
   getCardMonth(e)
   {
-    let month = parseInt(e.target.value);
-    if(!isNaN(month))
+    if(!isNaN(e.target.value))
     {
-        if((month > 0) && (month < 13))
-        {
-          this.user.cardMonth = month;
-          this.isCompleteRegisterCard();
-          console.log(month);
-          this.notify();
-        } 
+        this.user.cardMonth = e.target.value;
+        this.isCompleteRegisterCard();
+        this.notify();   
     }
-    this.notify();
   }
   getCardYear(e)
   {
-    let year = parseInt(e.target.value);
-    if(!isNaN(year))
+    if(!isNaN(e.target.value))
     {
-      if((year > 16) && (year > 0))
-      {
-        this.user.cardYear = e.target.value;
-        this.isCompleteRegisterCard();
-        this.notify();
-      } 
+      this.user.cardYear = e.target.value;
+      this.isCompleteRegisterCard();
+      this.notify(); 
     }
   }
   isCompleteRegisterCard()
@@ -101,6 +92,43 @@ class YapeModel {
     if(this.user.passwordSMSuser == this.user.passwordSMS)
     {
       this.nextPage = true;
+    }
+  }
+  validateName(e)
+  {
+    if(isNaN(e.target.value))
+    {
+      this.user.name = e.target.value;
+      this.validateAllUser();
+      this.notify();
+    }
+  }
+  validateEmail(e)
+  {
+    const emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    if (emailRegex.test(e.target.value)) 
+    {
+      this.user.email = e.target.value;
+      this.notify();
+    } 
+  }
+  validatePassword(e)
+  {
+    if(!isNaN(e.target.value))
+    {
+      this.user.password = e.target.value;
+      this.validateAllUser();
+      this.notify();
+    }
+  }
+  validateAllUser(e)
+  {
+    if((this.user.password.length == 6) && (this.user.name.length >= 2))
+    {
+      this.nextCreateUser = true;
+    } else 
+    {
+      this.nextCreateUser = false;
     }
   }
 }
