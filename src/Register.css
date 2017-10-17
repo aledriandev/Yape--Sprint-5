@@ -1,0 +1,63 @@
+
+h4 {
+    font-size: 1.125rem;
+}
+.less-margin {
+    margin-bottom: 0rem !important;
+    margin-top: 0.5rem !important;
+}
+.item > p {
+    font-size: 0.9rem !important;
+  }
+
+.text-white {
+    color: #fff;
+}
+
+
+.bg-yellow {
+    background-color: #fbd43b!important;
+}
+
+
+img{
+    margin-top: 10%!important;
+    max-width: 80%;
+    height: auto;
+}
+/*Page content styles*/
+.button-content{
+    border-radius: 3px!important;
+    padding: 3% 20% 3%!important;
+    margin: 0 auto;
+  }
+ .botonMily{
+     margin-top:5%;
+     text-align: center;
+     
+ }
+
+  form{
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+/*Medias Queries*/
+@media (min-width: 600px) and (max-width:2500px) {
+    .button-content{
+      border-radius: 3px;
+      padding: 1% 8% 1%;
+    }
+  }
+  @media (max-width: 700px) {
+    header,
+    section{
+      width: 100%
+    }
+    .button-content{
+      border-radius: 3px;
+      padding: 3% 20% 3%;
+
+    }
+  }
+  
+

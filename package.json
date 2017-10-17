@@ -5,13 +5,18 @@
   "homepage": "https://aqp20171679.github.io/Yape--Sprint-5",
   "dependencies": {
     "firebase": "^4.5.2",
+    "bootstrap": "4.0.0-beta",
+    "jquery": "^3.2.1",
+    "popper.js": "^1.12.5",
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.3",
     "react-dom": "^16.0.0",
     "react-materialize": "^1.0.16",
+    "react-responsive-carousel": "^3.1.27",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.14",
-    "react-sweetalert": "^0.0.1"
+    "react-sweetalert": "^0.0.1",
+    "reactstrap": "^5.0.0-alpha.3"
   },
   "scripts": {
     "start": "react-scripts start",
