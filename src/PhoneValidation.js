@@ -19,7 +19,7 @@ const PhoneValidation = ({ model }) => {
 	return (
 		<Grid className="text-center">
 			<Row className="show-grid">
-				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}><center><Image className="spaceInit" src={phone} /></center></Col>
+				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}><center><Image className="phoneImg" src={phone} /></center></Col>
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}><h5 >Para comenzar validemos tu número</h5></Col>
@@ -31,7 +31,7 @@ const PhoneValidation = ({ model }) => {
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 					<Input
-						className="input-yellow-bottom text-purple-dark text-center"
+						className="input-yellow-bottom text-center"
 						type="text"
 						placeholder=" ingresa tu celular"
 						maxLength="9"
@@ -50,7 +50,6 @@ const PhoneValidation = ({ model }) => {
 					}
 				</Col>
 			</Row>
-
 		</Grid>
 	);
 };

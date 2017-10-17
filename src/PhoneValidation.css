@@ -1,102 +1,22 @@
-.content-center {
-    margin-left: auto;
-    margin-right: auto;
-    width: 280px;
-}
-
-.spaceInit {
-    padding-top: 20px;
-}
-
 /*clase de la imagen  */
-.validationImg{
-    width: 40%;
-     display: inline-block;
-    vertical-align: middle;
-}
-
-img
+.phoneImg
 {
-    width: 50%;
-    margin-top: 25%;
-}
-.lockPasswordCard{
-    background-image: url(./images/lock.png);
-    background-repeat: no-repeat;
-    background-size: 7%;
-}
-
-
-/*clases de la etiqueta h5  */
-
-.title{
-    font-weight: bold;
-    font-size: 1.2em;
+    width: 40% !important;
+    margin-top: 20%;
 }
 
 .input-yellow-bottom {
     background-image: url(http://174.138.48.60:3000/img/icons/phoneandnumber.png);
     background-repeat: no-repeat;
-    background-size: 20%;
+    background-size: 30%;
     margin-top: 12% ;
     background-position-y: 1px;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    box-shadow: none;
-    border-bottom-color: #fbd43b;
     background-color: transparent;
-    color: #38052a;
- 
-}
-
-.text-purple-dark {
-    color: #38052a !important;
-}
-
-input {
-    line-height: normal;
     
 }
 
 .text-turquoise {
     color: #00c3a3;
-}
-
-.bg-gray-light {
-    background-color: #d1d1d1;
-}
-
-.rem-08 {
-    font-size: 10px;
-}
-
-.text-uppercase {
-    text-transform: uppercase;
-}
-
-.text-white {
-    color: #fff;
-}
-
-.button-register {
-    width: 50%;
-    padding: 4%;
-    border-radius: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 300;
-}
-
-.bg-yellow {
-    background-color: #fbd43b;
-}
-
-a {
-  background-color: transparent;
-    color: #1ccacd;
-    line-height: inherit;
-    text-decoration: none;
 }
 
 .btns{
@@ -126,3 +46,4 @@ a {
     background-color: #d1d1d1;
     color: #fff; 
 }
+
