@@ -17,7 +17,8 @@ const Account = ({ model }) => {
 				<Col xs={10} xsOffset={1}  sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 					<img className='ac-img-happy' src='http://174.138.48.60:3000/img/icons/happy-face.png'/>
 					<h5 className='ac-text-white ac-bold'>Hola</h5>
-					<span className='ac-text-turquoise'> <img src="http://174.138.48.60:3000/img/icons/eye.png" className="ac-eye ac-w-7"/>Mostrar saldo</span>
+					<span className='ac-text-turquoise'> <img src="http://174.138.48.60:3000/img/icons/eye.png" className="ac-eye ac-w-7"/>
+					 Saldo: S/. {model.user.accountBalance} </span>
 				</Col>
 			</Row>
 			<div className='ac-operations ac-op text-left'>
