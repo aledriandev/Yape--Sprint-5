@@ -10,10 +10,12 @@
 
 .cv-message{
   width: 40%;
+  margin-top: 20%;
 }
 
 .cv-title{
   font-weight: bold;
+  margin-top: 10%;
 }
 
 .cv-w-10{
@@ -22,5 +24,6 @@
 }
 
 .cv-retry{
-  margin-top: 100px;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
