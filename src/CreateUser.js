@@ -81,7 +81,7 @@ const Buttons = ({ model}) => {
 			<Row>
 				<Col className="btnsCU" xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 					{
-						!model.user.password
+						model.nextCreateUser
 						? <NavLink to="/register-card" className="navCreateUser">Crear Cuenta</NavLink>
 						: <Button className="btnCreateUser">Crear Cuenta</Button>
 					}
