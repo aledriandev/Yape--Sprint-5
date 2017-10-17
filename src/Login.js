@@ -24,12 +24,12 @@ const Header = () => {
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<h5 className="titleCU">Crea tu usuario Yape</h5>
+					<h5 className="titleCU">Ingresa tu usuario Yape</h5>
 				</Col>
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<span className="infoUserCU">Ingresa un nombre, email y clave de usuario</span>
+					<span className="infoUserCU">Ingresa tu email y clave de usuario</span>
 				</Col>
 			</Row>
 		</div>
@@ -58,7 +58,6 @@ const FormUser = ({model}) => {
 						maxLength="6"
 						value={model.user.password}
 						onChange={e => model.validatePassword(e)}/>
-					<div className="noteCU">Cuida esta clave como oro, es tu acceso a Yape.</div>
 				</Col>
 			</Row>
 		</div>
