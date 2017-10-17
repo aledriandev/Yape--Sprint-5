@@ -1,0 +1,22 @@
+.receivePaymentGrid
+{
+    width: 100%;
+    height: 100%;
+    background-color: #eaeaea;
+}
+.fa-angle-left
+{
+    color: black;
+}
+.circulo {
+     width: 80%;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     background: white;
+}
+.imgQR
+{
+    margin-top: 10%;
+    width: 70%;
+}
