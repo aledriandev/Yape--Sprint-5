@@ -36,37 +36,69 @@ const Header = () => {
 	);
 }
 
-const CreateUser = ({ model }) => {
-  return (
-    <Grid className="text-center" id="createUser">
-			<Header />
+const FormUser = ({model}) => {
+	return (
+		<div>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<Input type="text" s={12} className="text-center userCU" placeholder="Nombre"/>
+					<Input type="text" 
+						s={12} 
+						className="text-center userCU" 
+						placeholder="Nombre"
+						value={model.user.name}
+						onChange={e => model.validateName(e)}/>
 				</Col>
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<Input type="email" s={12} className="text-center messageCU" placeholder="Email"/>
+					<Input type="email" 
+						s={12} 
+						className="text-center messageCU" 
+						placeholder="Email"
+						value={model.user.email}
+						onChange={e => model.validateEmail(e)}/>
 				</Col>
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<Input type="password" s={12} className="text-center lockCU" placeholder="Password" maxLength="6"/>
+					<Input type="password" 
+						s={12} 
+						className="text-center lockCU" 
+						placeholder="Password" 
+						maxLength="6"
+						value={model.user.password}
+						onChange={e => model.validatePassword(e)}/>
 					<div className="noteCU">Cuida esta clave como oro, es tu acceso a Yape.</div>
 				</Col>
 			</Row>
+		</div>
+	);
+}
+
+const Buttons = ({ model}) => {
+	return (
+		<div>
 			<Row>
 				<Col className="btnsCU" xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 					{
-						!model.user.password
+						model.nextCreateUser
 						? <NavLink to="/register-card" className="navCreateUser">Crear Cuenta</NavLink>
 						: <Button className="btnCreateUser">Crear Cuenta</Button>
 					}
 				</Col>
 			</Row>
+		</div>
+	);
+}
+
+const CreateUser = ({ model }) => {
+	return (
+		<Grid className="text-center" id="createUser">
+				<Header />
+				<FormUser model = {model} />
+				<Buttons model = {model} />
 		</Grid>
-  );
+  	);
 };
 
 export default CreateUser;

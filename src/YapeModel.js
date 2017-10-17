@@ -3,24 +3,23 @@ class YapeModel {
 		this.notify = null;
 		this.user = {
       phone: null,
-      passwordSMS: null,
-      name: null,
-      email: null,
-      password: null,
+      passwordSMSuser: null,
+      name: "",
+      email: "",
+      password: "",
       numberCard: "",
       cardMonth: "",
       cardYear: "",
       passwordCard: '',
-
+      passwordSMS: Math.round(Math.random()*(999999-100000)+100000),
     }
+    this.timer = 20;
     this.activeNextRegisterCard = false;
-    this.timer = null;
-    this.activeCheckboxPhone = false;
-    this.activeNextRegisterPhone = false;
-    this.lengthPhone = null;
-
+    this.nextPage = false;
+    this.nextCreateUser = false;
+    this.emailValid = false;
   }
-  subscribe (render) {
+	subscribe (render) {
     this.notify = render;
     this.notify();
   }
@@ -47,30 +46,20 @@ class YapeModel {
   }
   getCardMonth(e)
   {
-    let month = parseInt(e.target.value);
-    if(!isNaN(month))
+    if(!isNaN(e.target.value))
     {
-        if((month > 0) && (month < 13))
-        {
-          this.user.cardMonth = month;
-          this.isCompleteRegisterCard();
-          console.log(month);
-          this.notify();
-        } 
+        this.user.cardMonth = e.target.value;
+        this.isCompleteRegisterCard();
+        this.notify();   
     }
-    this.notify();
   }
   getCardYear(e)
   {
-    let year = parseInt(e.target.value);
-    if(!isNaN(year))
+    if(!isNaN(e.target.value))
     {
-      if((year > 16) && (year > 0))
-      {
-        this.user.cardYear = e.target.value;
-        this.isCompleteRegisterCard();
-        this.notify();
-      } 
+      this.user.cardYear = e.target.value;
+      this.isCompleteRegisterCard();
+      this.notify(); 
     }
   }
   isCompleteRegisterCard()
@@ -80,29 +69,68 @@ class YapeModel {
       this.activeNextRegisterCard = true;
     }
   }
-  validateNumberPhone(e){
-    if (e.target.value.length == 9) {
-			this.lengthPhone = true;
-		
-		} else {
-			this.lengthPhone= false;
-		
-		}
+  saveInfo()
+  {
+    localStorage.setItem(this.user.phone, JSON.stringify(this.user));
+    let guardado = localStorage.getItem(this.user.phone);
+    guardado = JSON.parse(guardado);
+    console.log('objetoObtenido: ', guardado.passwordCard);
+  }
+  decrement () {
+    this.timer = (this.timer - 1);
     this.notify();
   }
-  checkboxPhone(e){	
-      if(this.activeCheckboxPhone = e.target.checked){
-        this.activeCheckboxPhone = true;
-      } else{
-        this.activeCheckboxPhone = false;
-      }	
+  validationSMS (e) {
+    if (!isNaN(e.target.value))
+    {
+      this.user.passwordSMSuser = e.target.value;
+      console.log(this.user.passwordSMS.length)
+      this.isVerificateSMS();
       this.notify();
+    }
   }
-
-  isCompleteRegisterPhone(){
-    if((this.activeCheckboxPhone == true)&&(this.lengthPhone == true)){
-      this.activeNextRegisterPhone = true;
-    }   
+  isVerificateSMS() {
+    if(this.user.passwordSMSuser == this.user.passwordSMS)
+    {
+      this.nextPage = true;
+    }
+  }
+  validateName(e)
+  {
+    if(isNaN(e.target.value))
+    {
+      this.user.name = e.target.value;
+      this.validateAllUser();
+      this.notify();
+    }
+  }
+  validateEmail(e)
+  {
+    const emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    this.user.email = e.target.value;
+			if (emailRegex.test(this.user.email)) {
+          this.emailValid = true;
+      }
+      this.notify(); 
+  }
+  validatePassword(e)
+  {
+    if(!isNaN(e.target.value))
+    {
+      this.user.password = e.target.value;
+      this.validateAllUser();
+      this.notify();
+    }
+  }
+  validateAllUser(e)
+  {
+    if((this.user.password.length == 6) && (this.user.name.length >= 2) && (this.emailValid == true))
+    {
+      this.nextCreateUser = true;
+    } else 
+    {
+      this.nextCreateUser = false;
+    }
   }
 }
 
