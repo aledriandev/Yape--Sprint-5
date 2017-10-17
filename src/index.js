@@ -10,6 +10,7 @@ const model = new YapeModel();
 const render = () => {
 	ReactDOM.render(<App model = {model}/>, document.getElementById('root'));
 }
+
 model.subscribe(render);
 render();
 registerServiceWorker();
