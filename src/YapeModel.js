@@ -81,6 +81,7 @@ class YapeModel {
     this.firebase = new Firebase();
     this.isLogging = false;
     this.user = {
+      uid : -1,
       phone: "",
       passwordSMSuser: null,
       name: "",
@@ -100,11 +101,42 @@ class YapeModel {
     this.emailValid = false;
     this.activeCheckboxPhone = undefined;
     this.activeNextRegisterPhone = false;
+    this.accounts = [];
+
   }
+  
   subscribe(render) {
     this.notify = render;
+    
+    this.firebase.database.ref('account').on('value', (items) => {
+      this.accounts = [];
+      items.forEach ( snap => {
+        var user = snap.val();
+        user.uid = snap.key;
+        this.accounts.push (user);
+      });
+      this.notify();      
+    });    
     this.notify();
   }
+
+  enviarDinero (uidDestino, monto) {
+    this.user.accountBalance -= monto;
+    this.firebase.database.ref ('account/' + this.user.uid).set (this.user).then ( () => {
+      console.log ('cuenta yape actualizada!');
+    }) ;
+
+    this.firebase.database.ref ('account/' + uidDestino).once ('value').then ( (snap) => {
+      var userDestino = snap.val();
+      userDestino.accountBalance += monto;
+      this.firebase.database.ref ('account/' + uidDestino).set (userDestino).then ( () => {
+        console.log ('cuenta yape actualizada!');
+      }) ;
+    }) ;
+
+
+   } 
+
   hidePartCard()
   {
     return ('************' + this.user.numberCard.slice(-4));
@@ -144,10 +176,20 @@ class YapeModel {
   {
     if ((this.user.numberCard.length == 16) && (this.user.cardMonth.length == 2) && (this.user.cardYear.length == 2)) {
       this.activeNextRegisterCard = true;
+      firebase.auth().createUserWithEmailAndPassword(this.user.email, this.user.password).then ( (ret) => {
+        console.log ('login uid', ret.uid);
+        this.firebase.database.ref ('account/' + ret.uid).set (this.user).then ( () => {
+          console.log ('cuenta yape creada!');
+        }) ;
+        
+        this.firebase.database.ref ('account/' + ret.uid).on('value',  snap => {            
+          this.user = snap.val();
+          this.user.uid = snap.key;
+          console.log ("on...", this.user);
+          this.notify();
+        }); 
 
-      this.firebase.database.ref ('account').push (this.user).then ( () => {
-        console.log ('cuenta yape creada!');
-      }) ;
+      });
     }
   }
   saveInfo()
@@ -199,18 +241,27 @@ class YapeModel {
       this.notify();
     }
   }
+
   validateAllUser(e)
   {
     if ((this.user.password.length == 6)  && (this.emailValid == true)) {
-      this.firebase.login(this.user.email, this.user.password).then ( () => {
-        this.isLogging = true;        
+      this.firebase.login(this.user.email, this.user.password).then ( (ret) => {
+             
+        this.firebase.database.ref ('account/' + ret.uid).on('value',  snap => {            
+          this.user = snap.val();
+          this.user.uid = snap.key;
+          console.log ("on...", this.user);
+          this.notify();
+        }); 
+        this.isLogging = true;   
         console.log ("login correcto", this.user.email);
         this.notify();
-      }).catch ( error => {
+        
+      }).catch ( (e) => {
         this.isLogging = false;        
         console.log ("login incorrecto", this.user.email);
         this.notify();
-      }); 
+      }) ; 
     }
     if ((this.user.password.length == 6) && (this.user.name.length >= 2) && (this.emailValid == true)) {
       this.nextCreateUser = true;
@@ -219,6 +270,7 @@ class YapeModel {
       this.nextCreateUser = false;
     }
   }
+
   validateNumberPhone(e) {
     if (!isNaN(e.target.value)) {
       this.user.phone = e.target.value;
