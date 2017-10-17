@@ -12,6 +12,7 @@ import {Carousel} from 'react-responsive-carousel';
 import {Button} from 'react-materialize';
 import { Grid, Row, Col, Form, FormGroup, InputGroup, FormControl, Image, Checkbox } from 'react-bootstrap';
 import './Register.css';
+import miImagen  from './images/icon-people.png'
 
 
 // https://www.npmjs.com/package/react-responsive-carousel
