@@ -8,7 +8,7 @@ import {
   onChange
   } from 'react-router-dom'
 import ReactDOM  from 'react-dom';
-import {Carousel} from 'react-responsive-carousel';
+// import {Carousel} from 'react-responsive-carousel';
 import {Button} from 'react-materialize';
 import { Grid, Row, Col, Form, FormGroup, InputGroup, FormControl, Image, Checkbox } from 'react-bootstrap';
 import './Register.css';
