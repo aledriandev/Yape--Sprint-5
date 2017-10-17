@@ -1,42 +1,80 @@
 import React, {Component} from 'react';
-import { UncontrolledCarousel } from 'reactstrap';
+import {
+	BrowserRouter,
+	Route,
+	Switch,
+	NavLink,
+	Redirect
+} from 'react-router-dom'
+import ReactDOM  from 'react-dom';
+import {Carousel} from 'react-responsive-carousel';
+import {Button} from 'react-materialize';
+import { Grid, Row, Col, Form, FormGroup, InputGroup, FormControl, Image, Checkbox } from 'react-bootstrap';
 import './Register.css';
-// import {Input, Button} from  'react-materialize';
 
-// import Carousel from '../src/Carousel';
 
-class Register extends Component{
-constructor(props){
-  super (props)
+// https://www.npmjs.com/package/react-responsive-carousel
 
-}
-render (){
-  const model = this.props;
-  const items = [
-    {
-      src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa1d%20text%20%7B%20fill%3A%23555%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa1d%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.921875%22%20y%3D%22218.3%22%3EFirst%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
-      altText: 'Slide 1',
-      caption: 'Slide 1'
-    },
-    {
-      src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa20%20text%20%7B%20fill%3A%23444%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa20%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23666%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22247.3203125%22%20y%3D%22218.3%22%3ESecond%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
-      altText: 'Slide 2',
-      caption: 'Slide 2'
-    },
-    {
-      src: '"/img/group-people.png"',
-      altText: 'Slide 3',
-      caption: 'Slide 3'
+
+class Register extends React.Component{
+  constructor(props) {
+		super(props);
+		this.state = {
+			active: true,
+		}
+	}
+  render() {
+        return (
+     
+<Grid className="text-center">
+<div className="item">
+  <img src="data/images/icon-people.png" className="img-respoonsive"/>
+  <b><h4 className="less-margin">Paga a tu amigos</h4></b>
+  <p className="less-margin"> Paga a quien quieras desde donde quieras , sin usar efectivo</p>
+</div>
+<Form>
+      <Row className="botonMily">
+      <Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+        {
+          this.state.active ?
+            <NavLink to={"/phone-validation"} className="block button-content bg-yellow text-white">REGISTRARME</NavLink>
+            :
+            <NavLink to={"/phone-validation"} className="button-content bg-gray-light text-white">REGISTRARME</NavLink>
+        }
+      </Col>
+    </Row>
+  </Form>
+</Grid>
+  
+        );
     }
-  ];
-  return (    
-   <UncontrolledCarousel items={items} />
-  )
-}
-}
+  }
 
-export default Register;
+    export default Register;
 
+// Don't forget to include the css in your page 
+// <link rel="stylesheet" href="carousel.css"/>
+// Begin DemoSliderControls
+
+{/* <Carousel>
+<div>
+    <img src="data/images/icon-people.png" />
+    <p className="legend">Legend 1</p>
+</div>
+<div>
+    <img src="data/images/group-people.png" />
+    <p className="legend">Legend 2</p>
+</div>
+<div>
+    <img src="data/images/happy-person.png" />
+    <p className="legend">Legend 3</p>
+</div>
+<div>
+    <img src="assets/4.jpeg" />
+    <p className="legend">Legend 4</p>
+</div>
+
+</Carousel> */}
 
 {/* //<Carousel className="carousel-slide">
 //   <Carousel.Item>
