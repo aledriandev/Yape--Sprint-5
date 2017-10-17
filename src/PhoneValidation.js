@@ -48,7 +48,8 @@ const PhoneValidation = ({ model }) => {
 							<NavLink to={"/code-validation"} className="block button-register bg-yellow text-white">CONTINUAR</NavLink>
 							:
 							<Button className="button-register bg-gray-light text-white">CONTINUAR</Button>
-							
+							    ? <NavLink to="/code-validation" className="navPhoneValidation">Crear Cuenta</NavLink>
+          				: <Button className="btnPhoneValidation">Crear Cuenta</Button>
 					}
 				</Col>
 			</Row>
