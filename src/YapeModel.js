@@ -18,6 +18,10 @@ class YapeModel {
     this.nextPage = false;
     this.nextCreateUser = false;
     this.emailValid = false;
+<<<<<<< HEAD
+  
+=======
+>>>>>>> 92a29380632f3373a128fc5382938d76a35ca408
   }
 	subscribe (render) {
     this.notify = render;
@@ -133,6 +137,5 @@ class YapeModel {
     }
   }
 }
-
 
 export default YapeModel;
