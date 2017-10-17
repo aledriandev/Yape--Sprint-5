@@ -36,26 +36,42 @@ const Header = () => {
 	);
 }
 
-const CreateUser = ({ model }) => {
-  return (
-    <Grid className="text-center" id="createUser">
-			<Header />
+const FormUser = ({model}) => {
+	return (
+		<div>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<Input type="text" s={12} className="text-center userCU" placeholder="Nombre"/>
+					<Input type="text" 
+						s={12} 
+						className="text-center userCU" 
+						placeholder="Nombre"/>
 				</Col>
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<Input type="email" s={12} className="text-center messageCU" placeholder="Email"/>
+					<Input type="email" 
+						s={12} 
+						className="text-center messageCU" 
+						placeholder="Email"/>
 				</Col>
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<Input type="password" s={12} className="text-center lockCU" placeholder="Password" maxLength="6"/>
+					<Input type="password" 
+						s={12} 
+						className="text-center lockCU" 
+						placeholder="Password" 
+						maxLength="6"/>
 					<div className="noteCU">Cuida esta clave como oro, es tu acceso a Yape.</div>
 				</Col>
 			</Row>
+		</div>
+	);
+}
+
+const Buttons = ({ model}) => {
+	return (
+		<div>
 			<Row>
 				<Col className="btnsCU" xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 					{
@@ -65,8 +81,18 @@ const CreateUser = ({ model }) => {
 					}
 				</Col>
 			</Row>
+		</div>
+	);
+}
+
+const CreateUser = ({ model }) => {
+	return (
+		<Grid className="text-center" id="createUser">
+				<Header />
+				<FormUser model = {model} />
+				<Buttons model = {model} />
 		</Grid>
-  );
+  	);
 };
 
 export default CreateUser;
