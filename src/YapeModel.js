@@ -3,7 +3,7 @@ class YapeModel {
 		this.notify = null;
 		this.user = {
       phone: null,
-      passwordSMS: null,
+      passwordSMSuser: null,
       name: "",
       email: "",
       password: "",
@@ -11,9 +11,11 @@ class YapeModel {
       cardMonth: "",
       cardYear: "",
       passwordCard: '',
+      passwordSMS: Math.round(Math.random()*(999999-100000)+100000),
     }
+    this.timer = 20;
     this.activeNextRegisterCard = false;
-    this.timer = null;
+    this.nextPage = false;
   }
 	subscribe (render) {
     this.notify = render;
@@ -73,6 +75,26 @@ class YapeModel {
     if((this.user.numberCard.length == 16) && (this.user.cardMonth.length == 2) && (this.user.cardYear.length == 2))
     {
       this.activeNextRegisterCard = true;
+    }
+  }
+  
+  decrement () {
+    this.timer = (this.timer - 1);
+    this.notify();
+  }
+  validationSMS (e) {
+    if (!isNaN(e.target.value))
+    {
+      this.user.passwordSMSuser = e.target.value;
+      console.log(this.user.passwordSMS.length)
+      this.isVerificateSMS();
+      this.notify();
+    }
+  }
+  isVerificateSMS() {
+    if(this.user.passwordSMSuser == this.user.passwordSMS)
+    {
+      this.nextPage = true;
     }
   }
 }
