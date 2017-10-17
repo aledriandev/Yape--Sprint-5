@@ -1,0 +1,44 @@
+
+
+.less-margin {
+    margin-bottom: 0rem !important;
+    margin-top: 0.5rem !important;
+}
+
+.text-white {
+    color: #fff;
+}
+
+
+.bg-yellow {
+    background-color: #fbd43b!important;
+}
+
+
+.mily{
+    margin-top: 10%!important;
+    max-width: 80%;
+    height: auto;
+}
+
+.button-content{
+    border-radius: 3px!important;
+    padding: 3% 20% 3%!important;
+    margin: 0 auto;
+  }
+ .botonMily{
+     margin-top:5%;
+     text-align: center;
+     
+ }
+
+
+/*Medias Queries*/
+@media (min-width: 600px) and (max-width:2500px) {
+    .button-content{
+      border-radius: 3px;
+      padding: 1% 8% 1%;
+    }
+  }
+
+

@@ -41,16 +41,6 @@ const FormUser = ({model}) => {
 		<div>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<Input type="text" 
-						s={12} 
-						className="text-center userCU" 
-						placeholder="Nombre"
-						value={model.user.name}
-						onChange={e => model.validateName(e)}/>
-				</Col>
-			</Row>
-			<Row className="show-grid">
-				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 					<Input type="email" 
 						s={12} 
 						className="text-center messageCU" 
@@ -81,9 +71,9 @@ const Buttons = ({ model}) => {
 			<Row>
 				<Col className="btnsCU" xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 					{
-						model.nextCreateUser
-						? <NavLink to="/register-card" className="navCreateUser">Crear Cuenta</NavLink>
-						: <Button className="btnCreateUser">Crear Cuenta</Button>
+						model.isLogging
+						? <NavLink to="/account" className="navCreateUser">Ingresar</NavLink>
+						: <Button className="btnCreateUser">Ingresar</Button>
 					}
 				</Col>
 			</Row>

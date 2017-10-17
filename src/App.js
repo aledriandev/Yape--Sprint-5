@@ -13,6 +13,8 @@ import Register from "./Register";
 import PhoneValidation from './PhoneValidation';
 import CodeValidation from "./CodeValidation"
 import CreateUser from './CreateUser';
+import Login from './Login';
+
 import RegisterCard from './RegisterCard';
 import PasswordCard from './PasswordCard';
 import Account from './Account';
@@ -40,6 +42,8 @@ const App = (props) => {
           <Route  path="/register" render={() => <Register model={model} />}/>
           <Route  path="/phone-validation" render={() => <PhoneValidation model={model} />}/>
           <Route  path="/code-validation" render={() => <CodeValidation model={model} />}/>
+          <Route  path="/login" render={() => <Login model={model} />}/>
+          
           <Route  path="/create-user" render={() => <CreateUser model={model} />}/>
           <Route  path="/register-card" render={() => <RegisterCard model={model} />}/>
           <Route  path="/password-card" render={() => <PasswordCard model={model} />}/>

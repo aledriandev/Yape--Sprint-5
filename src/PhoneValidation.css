@@ -1,61 +1,17 @@
-.content-center {
-    margin-left: auto;
-    margin-right: auto;
-    width: 280px;
-}
-
-.spaceInit {
-    padding-top: 20px;
-}
-
 /*clase de la imagen  */
-.validationImg{
-    width: 40%;
-     display: inline-block;
-    vertical-align: middle;
-}
-
-img
+.phoneImg
 {
-    width: 50%;
-    margin-top: 25%;
-}
-.lockPasswordCard{
-    background-image: url(./images/lock.png);
-    background-repeat: no-repeat;
-    background-size: 7%;
-}
-
-
-/*clases de la etiqueta h5  */
-
-.title{
-    font-weight: bold;
-    font-size: 1.2em;
+    width: 40% !important;
+    margin-top: 20%;
 }
 
 .input-yellow-bottom {
     background-image: url(http://174.138.48.60:3000/img/icons/phoneandnumber.png);
     background-repeat: no-repeat;
-    background-size: 20%;
+    background-size: 30%;
     margin-top: 12% ;
     background-position-y: 1px;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    box-shadow: none;
-    border-bottom-color: #fbd43b;
     background-color: transparent;
-    color: #38052a;
- 
-}
-
-.text-purple-dark {
-    color: #38052a !important;
-}
-
-input {
-    line-height: normal;
     
 }
 
@@ -63,42 +19,31 @@ input {
     color: #00c3a3;
 }
 
-.bg-gray-light {
-    background-color: #d1d1d1;
-}
-
-.rem-08 {
-    font-size: 10px;
-}
-
-.text-uppercase {
-    text-transform: uppercase;
-}
-
-.text-white {
-    color: #fff;
-}
-
-.button-register {
-    width: 50%;
-    padding: 4%;
-    border-radius: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 300;
-}
-
-.bg-yellow {
-    background-color: #fbd43b;
-}
-
-a {
-  background-color: transparent;
-    color: #1ccacd;
-    line-height: inherit;
-    text-decoration: none;
-}
-
 .btns{
     margin-top: 40px;
 }
+
+.navPhoneValidation, .navPhoneValidation:hover{
+    background-color: #fbd43b;   
+    border-radius: 2px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    letter-spacing: .5px;
+    transition: .2s ease-out;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+    
+}
+
+.btnPhoneValidation, .btnPhoneValidation:hover{
+    margin-top: -20px;
+    background-color: #d1d1d1;
+    color: #fff; 
+}
+
