@@ -6,10 +6,19 @@
 }
 .fa-angle-left
 {
+    margin-top: 25%;
+    margin-bottom: 50%;   
     color: black;
 }
+.titleReceivePayment
+{
+    margin-top: 25%;
+    margin-bottom: 15%; 
+}
 .circulo {
-     width: 80%;
+    margin-top: 15%;
+     width: 200px;
+     height: 200px;
      -moz-border-radius: 50%;
      -webkit-border-radius: 50%;
      border-radius: 50%;
@@ -17,6 +26,6 @@
 }
 .imgQR
 {
-    margin-top: 10%;
+    margin-top: 30px;
     width: 70%;
 }
