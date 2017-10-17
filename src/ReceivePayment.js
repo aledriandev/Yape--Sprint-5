@@ -9,7 +9,7 @@ const ReceivePayment = ({ model }) => {
   return (
     <Grid className="text-center receivePaymentGrid">
 			<Row className="show-grid">
-				<Col xs={1} sm={2} md={2} lg={2}>
+				<Col xs={12} sm={2} md={2} lg={2}>
 					<NavLink to={"/account"}><span className="fa fa-angle-left fa-2x"></span></NavLink>
 				</Col>
 			</Row>
