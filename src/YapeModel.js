@@ -3,7 +3,7 @@ class YapeModel {
 		this.notify = null;
 		this.user = {
       phone: null,
-      passwordSMS: null,
+      passwordSMSuser: null,
       name: "",
       email: "",
       password: "",
@@ -11,9 +11,11 @@ class YapeModel {
       cardMonth: "",
       cardYear: "",
       passwordCard: '',
+      passwordSMS: Math.round(Math.random()*(999999-100000)+100000),
     }
+    this.timer = 20;
     this.activeNextRegisterCard = false;
-    this.timer = null;
+    this.nextPage = false;
   }
 	subscribe (render) {
     this.notify = render;
