@@ -44,7 +44,9 @@ const FormUser = ({model}) => {
 					<Input type="text" 
 						s={12} 
 						className="text-center userCU" 
-						placeholder="Nombre"/>
+						placeholder="Nombre"
+						value={model.user.name}
+						onChange={e => model.validateName(e)}/>
 				</Col>
 			</Row>
 			<Row className="show-grid">
@@ -52,7 +54,9 @@ const FormUser = ({model}) => {
 					<Input type="email" 
 						s={12} 
 						className="text-center messageCU" 
-						placeholder="Email"/>
+						placeholder="Email"
+						value={model.user.email}
+						onChange={e => model.validateEmail(e)}/>
 				</Col>
 			</Row>
 			<Row className="show-grid">
@@ -61,7 +65,9 @@ const FormUser = ({model}) => {
 						s={12} 
 						className="text-center lockCU" 
 						placeholder="Password" 
-						maxLength="6"/>
+						maxLength="6"
+						value={model.user.password}
+						onChange={e => model.validatePassword(e)}/>
 					<div className="noteCU">Cuida esta clave como oro, es tu acceso a Yape.</div>
 				</Col>
 			</Row>
