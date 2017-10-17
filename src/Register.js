@@ -8,27 +8,49 @@ import {
   onChange
   } from 'react-router-dom'
 import ReactDOM  from 'react-dom';
-// import {Carousel} from 'react-responsive-carousel';
-import {Button} from 'react-materialize';
-import { Grid, Row, Col, Form, FormGroup, InputGroup, FormControl, Image, Checkbox } from 'react-bootstrap';
+// import {Button} from 'react-materialize';
+import { Grid, Row, Col,  Carousel } from 'react-bootstrap';
 import './Register.css';
-import miImagen  from './images/icon-people.png'
-
+import imagen1 from './images/icon-people.png'
 
 // https://www.npmjs.com/package/react-responsive-carousel
 
+const CarouselYape=()=>{
+  return(
+  <Carousel>
+  <Carousel.Item>
+    <img width={900} height={500} alt="900x500" src="http://174.138.48.60:3000/img/icons/icon-people.png"/>
+    <Carousel.Caption>
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img width={900} height={500} alt="900x500" src="/images/happy-person.png"/>
+    <Carousel.Caption>
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img width={900} height={500} alt="900x500" src="/images/group-people.png"/>
+    <Carousel.Caption>
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+</Carousel>
+ )}
 
-class Register extends React.Component{
-  constructor(props) {
-		super(props);
-		this.state = {
-			active: true,
-		}
-	}
-  render() {
-        return (
-     
-<Grid className="text-center">
+
+
+const Register = ({model}) => {
+  return (
+    <CarouselYape model={model}/>
+  );
+}
+  
+{/* <Grid className="text-center">
 <div className="item">
   <img src="data/images/icon-people.png" className="img-respoonsive mily"/>
   <b><h4 className="less-margin">Paga a tu amigos</h4></b>
@@ -60,7 +82,7 @@ class Register extends React.Component{
   
         );
     }
-  }
+  } */}
 
     export default Register;
 
