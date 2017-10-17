@@ -11,9 +11,14 @@ class YapeModel {
       cardMonth: "",
       cardYear: "",
       passwordCard: '',
+
     }
     this.activeNextRegisterCard = false;
     this.timer = null;
+    this.activeCheckboxPhone = false;
+    this.activeNextRegisterPhone = false;
+    this.lengthPhone = null;
+
   }
   subscribe (render) {
     this.notify = render;
@@ -75,7 +80,31 @@ class YapeModel {
       this.activeNextRegisterCard = true;
     }
   }
+  validateNumberPhone(e){
+    if (e.target.value.length == 9) {
+			this.lengthPhone = true;
+		
+		} else {
+			this.lengthPhone= false;
+		
+		}
+    this.notify();
+  }
+  checkboxPhone(e){	
+      if(this.activeCheckboxPhone = e.target.checked){
+        this.activeCheckboxPhone = true;
+      } else{
+        this.activeCheckboxPhone = false;
+      }	
+      this.notify();
+  }
 
+  isCompleteRegisterPhone(){
+    if((this.activeCheckboxPhone == true)&&(this.lengthPhone == true)){
+      this.activeNextRegisterPhone = true;
+    }   
+  }
 }
+
 
 export default YapeModel;
