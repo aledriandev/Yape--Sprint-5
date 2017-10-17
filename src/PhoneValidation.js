@@ -47,6 +47,7 @@ const PhoneValidation = ({ model }) => {
 						model.activeNextRegisterPhone 
 							    ? <NavLink to="/code-validation" className="navPhoneValidation">Continuar</NavLink>
           				: <Button className="btnPhoneValidation">Continuar</Button>
+				
 					}
 				</Col>
 			</Row>
