@@ -11,9 +11,9 @@ import {
 	Input,	Button, 	Icon
 } from 'react-materialize';
 
-const RegisterCard = ({ model }) => {
-  return (
-		<Grid className="text-center">
+const Head = () => {
+	return (
+		<div>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1}  sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 					<center><Image src={bcpCard} className="bcpCardRC" /></center>
@@ -29,6 +29,29 @@ const RegisterCard = ({ model }) => {
 					<p>Por ahora solo aceptamos cuentas de ahorro y/o corriente en soles</p>
 				</Col>
 			</Row>
+		</div>
+	);
+}
+
+const Buttons = ({model}) => {
+	return (
+		<div>
+			<Row>
+				<Col className="btns" xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+					{
+						model.activeNextRegisterCard
+          				? <NavLink to="/password-card" className="navRegisterCard">Crear Cuenta</NavLink>
+          				: <Button className="btnRegisterCard">Crear Cuenta</Button>
+					}
+				</Col>
+			</Row>
+		</div>
+	);
+}
+
+const FormCard = ({model}) => {
+	return (
+		<div>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 					<Input type="text" 
@@ -47,6 +70,13 @@ const RegisterCard = ({ model }) => {
     				</OverlayTrigger>
 				</Col>
 			</Row>
+		</div>
+	);
+}
+
+const FormDates = ({model}) => {
+	return (
+		<div>
 			<Row className="show-grid date-group">
 				<Col xs={6} className="dates">
 					<p className="date">Fecha de Vencimiento</p>
@@ -63,7 +93,7 @@ const RegisterCard = ({ model }) => {
 					<p className='text-center slash'>/</p>
 				</Col>
 				<Col xs={2} className="dates">
-				<Input className='text-center input-date' 
+					<Input className='text-center input-date' 
 						type='text' 
 						maxLength="2"
 						placeholder="Año"
@@ -71,17 +101,19 @@ const RegisterCard = ({ model }) => {
 						onChange={e => model.getCardYear(e)} />
 				</Col>
 			</Row>
-			<Row>
-				<Col className="btns" xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					{
-						model.activeNextRegisterCard
-          				? <NavLink to="/password-card" className="navRegisterCard">Crear Cuenta</NavLink>
-          				: <Button className="btnRegisterCard">Crear Cuenta</Button>
-					}
-				</Col>
-			</Row>
+		</div>
+	);
+}
+
+const RegisterCard = ({ model }) => {
+	return (
+		<Grid className="text-center">
+			<Head />
+			<FormCard model = {model} />
+			<FormDates model = {model} />
+			<Buttons model={model} />
 		</Grid>
-  );
+	);
 };
 
 export default RegisterCard;
