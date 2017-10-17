@@ -4,8 +4,9 @@ import {
 	Route,
 	Switch,
 	NavLink,
-	Redirect
-} from 'react-router-dom'
+  Redirect,
+  onChange
+  } from 'react-router-dom'
 import ReactDOM  from 'react-dom';
 import {Carousel} from 'react-responsive-carousel';
 import {Button} from 'react-materialize';
@@ -33,6 +34,7 @@ class Register extends React.Component{
   <p className="less-margin"> Paga a quien quieras desde donde quieras , sin usar efectivo</p>
 </div>
 <Form>
+
       <Row className="botonMily">
       <Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
         {
@@ -43,6 +45,15 @@ class Register extends React.Component{
         }
       </Col>
     </Row>
+    <section className="container-fluid downMily">
+    <span>¿Ya tienes cuenta?</span>
+    {
+          this.state.active ?
+            <NavLink to={"/login"} className="block milygreen">Inicia Ssesión</NavLink>
+            :
+            <NavLink to={"/login"} className="input-content bg-gray-light text-white">Inicia Sesión</NavLink>
+        }
+    </section>      
   </Form>
 </Grid>
   
