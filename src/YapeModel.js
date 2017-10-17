@@ -77,6 +77,7 @@ class YapeModel {
       this.activeNextRegisterCard = true;
     }
   }
+<<<<<<< HEAD
   saveInfo()
   {
     localStorage.setItem(this.user.phone, JSON.stringify(this.user));
@@ -84,6 +85,16 @@ class YapeModel {
     guardado = JSON.parse(guardado);
     console.log('objetoObtenido: ', guardado.passwordCard);
   }
+=======
+
+  saveInfo()
+  {
+    localStorage.setItem("user1", JSON.stringify(this.user));
+    let guardado = localStorage.getItem('user1');
+    guardado = JSON.parse(guardado);
+    console.log('objetoObtenido: ', guardado.passwordCard);
+  }  
+>>>>>>> 97c04577b5f2a26a5020497673fd536bccc91100
   decrement () {
     this.timer = (this.timer - 1);
     this.notify();
