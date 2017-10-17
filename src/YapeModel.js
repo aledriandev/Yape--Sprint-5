@@ -2,18 +2,24 @@ class YapeModel {
 	constructor () {
 		this.notify = null;
 		this.user = {
-      phone: null,
-      passwordSMS: null,
-      name: null,
-      email: null,
-      password: null,
+      phone: "",
+      passwordSMSuser: null,
+      name: "",
+      email: "",
+      password: "",
       numberCard: "",
       cardMonth: "",
       cardYear: "",
       passwordCard: '',
+      passwordSMS: Math.round(Math.random()*(999999-100000)+100000),
     }
+    this.timer = 20;
     this.activeNextRegisterCard = false;
-    this.timer = null;
+    this.nextPage = false;
+    this.nextCreateUser = false;
+    this.emailValid = false;
+    this.activeCheckboxPhone = undefined;
+    this.activeNextRegisterPhone = false;
   }
 	subscribe (render) {
     this.notify = render;
@@ -36,7 +42,6 @@ class YapeModel {
     if (!isNaN(e.target.value))
     {
       this.user.numberCard = e.target.value;
-      console.log(this.user.numberCard.length)
       this.isCompleteRegisterCard();
       this.notify();
     }
@@ -45,10 +50,9 @@ class YapeModel {
   {
     if(!isNaN(e.target.value))
     {
-      this.user.cardMonth = e.target.value;
-      console.log(this.user.cardMonth.length)
-      this.isCompleteRegisterCard();
-      this.notify();
+        this.user.cardMonth = e.target.value;
+        this.isCompleteRegisterCard();
+        this.notify();   
     }
   }
   getCardYear(e)
@@ -56,9 +60,8 @@ class YapeModel {
     if(!isNaN(e.target.value))
     {
       this.user.cardYear = e.target.value;
-      console.log(this.user.cardYear)
       this.isCompleteRegisterCard();
-      this.notify();
+      this.notify(); 
     }
   }
   isCompleteRegisterCard()
@@ -67,6 +70,90 @@ class YapeModel {
     {
       this.activeNextRegisterCard = true;
     }
+  }
+  saveInfo()
+  {
+    localStorage.setItem(this.user.phone, JSON.stringify(this.user));
+    let guardado = localStorage.getItem(this.user.phone);
+    guardado = JSON.parse(guardado);
+    console.log('objetoObtenido: ', guardado.passwordCard);
+  }
+  decrement () {
+    this.timer = (this.timer - 1);
+    this.notify();
+  }
+  validationSMS (e) {
+    if (!isNaN(e.target.value))
+    {
+      this.user.passwordSMSuser = e.target.value;
+      console.log(this.user.passwordSMS.length)
+      this.isVerificateSMS();
+      this.notify();
+    }
+  }
+  isVerificateSMS() {
+    if(this.user.passwordSMSuser == this.user.passwordSMS)
+    {
+      this.nextPage = true;
+    }
+  }
+  validateName(e)
+  {
+    if(isNaN(e.target.value))
+    {
+      this.user.name = e.target.value;
+      this.validateAllUser();
+      this.notify();
+    }
+  }
+  validateEmail(e)
+  {
+    const emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    this.user.email = e.target.value;
+			if (emailRegex.test(this.user.email)) {
+          this.emailValid = true;
+      }
+      this.notify(); 
+  }
+  validatePassword(e)
+  {
+    if(!isNaN(e.target.value))
+    {
+      this.user.password = e.target.value;
+      this.validateAllUser();
+      this.notify();
+    }
+  }
+  validateAllUser(e)
+  {
+    if((this.user.password.length == 6) && (this.user.name.length >= 2) && (this.emailValid == true))
+    {
+      this.nextCreateUser = true;
+    } else 
+    {
+      this.nextCreateUser = false;
+    }
+  }
+  validateNumberPhone(e){
+    if(!isNaN(e.target.value))
+      {
+        this.user.phone = e.target.value;
+        console.log(this.user.phone.length)
+        this.isCompleteRegisterPhone();
+        this.notify();
+      }
+  }
+  checkboxPhone(e){	
+    this.activeCheckboxPhone = e.target.checked;
+    this.isCompleteRegisterPhone();
+    this.notify();
+    console.log(this.activeCheckboxPhone)
+  }
+
+  isCompleteRegisterPhone(){
+    if((this.activeCheckboxPhone == true)&&(this.user.phone.length == 9)){
+      this.activeNextRegisterPhone = true;
+    }   
   }
 }
 
