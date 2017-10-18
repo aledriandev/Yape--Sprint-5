@@ -30,7 +30,8 @@ const SubmitPayment = ({ model }) => {
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 				<h5 className="titleSubmitPayment">USUARIO</h5>
-				</Col>			
+				</Col>	
+						
 			</Row>
 			<br/>
 			<Row className="show-grid">
