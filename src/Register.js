@@ -54,11 +54,7 @@ const Register = ({model}) => {
 }
   
 {/* <Grid className="text-center">
-<div className="item">
-  <img src="data/images/icon-people.png" className="img-respoonsive mily"/>
-  <b><h4 className="less-margin">Paga a tu amigos</h4></b>
-  <p className="less-margin"> Paga a quien quieras desde donde quieras , sin usar efectivo</p>
-</div>
+
 <Form>
 
       <Row className="botonMily">
@@ -85,7 +81,7 @@ const Register = ({model}) => {
   
         );
     }
-  } */}
+  } 
 
     export default Register;
 
