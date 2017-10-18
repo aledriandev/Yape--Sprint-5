@@ -52,6 +52,7 @@ const Register = ({model}) => {
     <CarouselYape model={model}/>
   );
 }
+export default Register;
   
 {/* <Grid className="text-center">
 
