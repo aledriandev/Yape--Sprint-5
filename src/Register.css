@@ -1,5 +1,6 @@
 
 
+
 .less-margin {
     margin-bottom: 0rem !important;
     margin-top: 0.5rem !important;
@@ -17,7 +18,7 @@
 
 .mily{
     margin-top: 10%!important;
-    max-width: 80%;
+    width: 35%;
     height: auto;
 }
 

@@ -1,0 +1,15 @@
+
+ .moneda {
+    background-image: url(https://image.freepik.com/iconos-gratis/peru-nuevo-simbolo-de-moneda-sol_318-50157.jpg);
+    background-repeat: no-repeat;
+    background-size: 5%;
+    margin-top: 12% ;
+    background-position-y: 1px;
+    background-color: transparent;
+} 
+
+.titleSubmitPayment{
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 20%;
+}

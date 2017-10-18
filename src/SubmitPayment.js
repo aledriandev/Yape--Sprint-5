@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
 	BrowserRouter,
 	Route,
@@ -7,29 +7,57 @@ import {
 	Redirect
 } from 'react-router-dom'
 import './App.css';
+import { Grid, Row, Col, Image } from 'react-bootstrap';
+import {
+	Input, Button, Icon
+} from 'react-materialize';
+import './SubmitPayment.css';
 
 const SubmitPayment = ({ model }) => {
-	const list = model.accounts.map ( (item, index) => <li key={item.uid} > {item.email} </li>)
+	const list = model.accounts.map((item, index) => <li key={item.uid} >{item.email}</li>)
 	const onClick = (e) => {
-			const emailDestino = 'luisa@gmail.com';
-			var uidDestino = -1;
-			model.accounts.forEach ( e => {
-				if (e.email === emailDestino) 
-					uidDestino = e.uid;
-			});  
-			console.log ('uidDestino', uidDestino);
-			model.enviarDinero (uidDestino , 10 );
-	};	
+		const emailDestino = 'luisa@gmail.com';
+		var uidDestino = -1;
+		model.accounts.forEach(e => {
+			if (e.email === emailDestino)
+				uidDestino = e.uid;
+		});
+		console.log('uidDestino', uidDestino);
+		model.enviarDinero(uidDestino, 10);
+	};
 	return (
-		<div>
-    <h2>destino</h2>
-		<ul>
-			{list} 
-		</ul>
-		<h3>enviar dinero</h3>
-		<button onClick={onClick} > nviar 10 soles a luisa </button>
-		</div>
-  );
+		<Grid className="text-center">
+			<Row className="show-grid">
+				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+				<h5 className="titleSubmitPayment">USUARIO</h5>
+				</Col>	
+						
+			</Row>
+			<br/>
+			<Row className="show-grid">
+				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+				<ul>
+					{list}
+				</ul>
+				</Col>
+			</Row>
+			<Row className="show-grid">
+				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}><h5 >Enviar dinero a: </h5></Col>
+			</Row>
+			<Row className="show-grid">
+				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+					<Input type="text" className="moneda text-center"></Input>
+				</Col>
+			</Row>
+			<Row>
+				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+					<Button className="btns" onClick={onClick} > Enviar </Button>
+				</Col>
+
+			</Row>
+		</Grid>
+
+	);
 };
 
 export default SubmitPayment;

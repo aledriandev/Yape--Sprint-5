@@ -7,7 +7,7 @@ import {
 	Redirect
 } from 'react-router-dom'
 import './PhoneValidation.css';
-import phone from "./phone.png";
+import phone from "./images/phone.png";
 import {
 	Input, Button, Icon
 } from 'react-materialize';
