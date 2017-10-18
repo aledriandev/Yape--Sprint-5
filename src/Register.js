@@ -53,6 +53,9 @@ const Register = ({model}) => {
   );
 }
   
+
+
+export default Register;
 {/* <Grid className="text-center">
 
 <Form>
@@ -83,7 +86,7 @@ const Register = ({model}) => {
     }
   } 
 
-    export default Register;
+ 
 
 // Don't forget to include the css in your page 
 // <link rel="stylesheet" href="carousel.css"/>

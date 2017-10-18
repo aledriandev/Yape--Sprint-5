@@ -76,17 +76,12 @@ div> .carousel{
   bottom: 50%;
 }
 
-<<<<<<< HEAD
-
-.less-margin {
-=======
 .carousel-inner>.item>.imgYape {
   display: block;
   max-width: 90%;
   height: auto;
 }
 /* .less-margin {
->>>>>>> mily
     margin-bottom: 0rem !important;
     margin-top: 0.5rem !important;
 } */
