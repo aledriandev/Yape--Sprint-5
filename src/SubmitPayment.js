@@ -16,14 +16,14 @@ import './SubmitPayment.css';
 const SubmitPayment = ({ model }) => {
 	const list = model.accounts.map((item, index) => <li className="contact cash" key={item.uid}>{item.email}</li>)
 	const onClick = (e) => {
-		const emailDestino = 'luisa@gmail.com';
+		const emailDestino = 'maribelv@gmail.com';
 		var uidDestino = -1;
 		model.accounts.forEach(e => {
 			if (e.email === emailDestino)
 				uidDestino = e.uid;
 		});
 		console.log('uidDestino', uidDestino);
-		model.enviarDinero(uidDestino, 10);
+		model.enviarDinero(uidDestino, model.validateMonto);
 	};
 	return (
 		<Grid className="text-center">

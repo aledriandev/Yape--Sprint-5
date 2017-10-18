@@ -122,14 +122,14 @@ class YapeModel {
   }
 
   enviarDinero (uidDestino, monto) {
-    this.user.accountBalance -= monto;
+    this.user.accountBalance -= this.validateMonto;
     this.firebase.database.ref ('account/' + this.user.uid).set (this.user).then ( () => {
       console.log ('cuenta yape actualizada!');
     }) ;
 
     this.firebase.database.ref ('account/' + uidDestino).once ('value').then ( (snap) => {
       var userDestino = snap.val();
-      userDestino.accountBalance += monto;
+      userDestino.accountBalance += this.validateMonto;
       this.firebase.database.ref ('account/' + uidDestino).set (userDestino).then ( () => {
         console.log ('cuenta yape actualizada!');
       }) ;
