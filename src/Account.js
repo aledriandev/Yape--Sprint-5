@@ -37,11 +37,11 @@ const Account = ({ model }) => {
 			</Row>
 			<Row className='ac-operations ac-pd-20'>
 				<Col xs={6} sm={6} md={6} lg={6}>
-					<NavLink to='/submit-payment'><Button floating large className='red' waves='light'><i class="material-icons">send</i></Button></NavLink>
+					<NavLink to='/submit-payment'><Button floating large className='red' waves='light'><i className="fa fa-paper-plane" aria-hidden="true"></i></Button></NavLink>
 					<p className='ac-text-white ac-bold'>ENVIAR PAGO</p>
 				</Col>
 				<Col xs={6} sm={6} md={6} lg={6}>
-					<NavLink to='/receive-payment'><Button floating large className='amber' waves='light'><i class="material-icons">aspect_ratio</i></Button></NavLink>
+					<NavLink to='/receive-payment'><Button floating large className='amber' waves='light'><i className="fa fa-qrcode" aria-hidden="true"></i></Button></NavLink>
 					<p className='ac-text-white ac-bold'>RECIBIR PAGO</p>
 				</Col>
 			</Row>
