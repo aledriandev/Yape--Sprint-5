@@ -8,7 +8,6 @@ import {
   onChange
   } from 'react-router-dom'
 import ReactDOM  from 'react-dom';
-// import {Button} from 'react-materialize';
 import { Grid, Row, Col, img, Carousel } from 'react-bootstrap';
 import './Register.css';
 
@@ -27,7 +26,7 @@ const CarouselYape=()=>{
 
   </Carousel.Item>
   <Carousel.Item>
-    <img className="imgYape" src="/images/happy-person.png"/>
+    <img className="imgYape" src="http://174.138.48.60:3000/img/icons/happy-person.png"/>
     <div className="divm text-center">
     <h4 className="strongm"><strong>Sin número de cuenta</strong></h4>
     <p className="paragraphm">Elige a quién pagar desde tu lista de contactos.</p>
@@ -35,7 +34,7 @@ const CarouselYape=()=>{
   
   </Carousel.Item>
   <Carousel.Item>
-    <img className="imgYape" src="/images/group-people.png"/>
+    <img className="imgYape" src="http://174.138.48.60:3000/img/icons/group-people.png"/>
     <div className="divm text-center">
     <h4 className="strongm"><strong>Gratis y Seguro</strong></h4>
     <p className="paragraphm">La transferencia es inmediata y gratutita de una cuenta a otra.</p>
@@ -77,62 +76,3 @@ const Register = ({model}) => {
   );
 }
 export default Register;
-  
-export default Register;
-{/* 
-        );
-    }
-  } 
-
- 
-
-// Don't forget to include the css in your page 
-// <link rel="stylesheet" href="carousel.css"/>
-// Begin DemoSliderControls
-
-{/* <Carousel>
-<div>
-    <img src="data/images/icon-people.png" />
-    <p className="legend">Legend 1</p>
-</div>
-<div>
-    <img src="data/images/group-people.png" />
-    <p className="legend">Legend 2</p>
-</div>
-<div>
-    <img src="data/images/happy-person.png" />
-    <p className="legend">Legend 3</p>
-</div>
-<div>
-    <img src="assets/4.jpeg" />
-    <p className="legend">Legend 4</p>
-</div>
-
-</Carousel> */}
-
-{/* //<Carousel className="carousel-slide">
-//   <Carousel.Item>
-//     <img className="img- img-responsive" alt="900x500" src={"/img/group-people.png"}/>
-//     <Carousel.Caption>
-//       <h3>First slide label</h3>
-//       <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-//     </Carousel.Caption>
-//   </Carousel.Item>
-//   <div className="text-center">
-//   <Carousel.Item>
-    
-//     <img className="img-carousel img-responsive" alt="900x500" src={"/img/happy-person.png"}/>
-//     <Carousel.Caption>
-//       <h3>Second slide label</h3>
-//       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-//     </Carousel.Caption>
-//   </Carousel.Item>
-//   </div>
-//   <Carousel.Item>
-//     <img className="img-carousel img-responsive" alt="900x500" src={"/img/icon-people.png"}/>
-//     <Carousel.Caption>
-//       <h3>Third slide label</h3>
-//       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-//     </Carousel.Caption>
-//   </Carousel.Item>
-// </Carousel> */}

@@ -23,10 +23,15 @@ const SubmitPayment = ({ model }) => {
 				uidDestino = e.uid;
 		});
 		console.log('uidDestino', uidDestino);
-		model.enviarDinero(uidDestino, model.validateMonto);
+		model.enviarDinero(uidDestino);
 	};
 	return (
 		<Grid className="text-center">
+			<Row className="show-grid">
+				<Col xs={2} sm={2} md={2} lg={2}>
+					<NavLink to={"/account"}><span className="fa fa-angle-left fa-2x"></span></NavLink>
+				</Col>
+			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
 					<h5 className="titleSubmitPayment">USUARIO</h5>

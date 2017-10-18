@@ -102,13 +102,10 @@ class YapeModel {
     this.activeCheckboxPhone = undefined;
     this.activeNextRegisterPhone = false;
     this.accounts = [];
-    this.validateMonto = "";
-
+    this.validateMonto = null;
   }
-  
   subscribe(render) {
-    this.notify = render;
-    
+    this.notify = render; 
     this.firebase.database.ref('account').on('value', (items) => {
       this.accounts = [];
       items.forEach ( snap => {
@@ -120,16 +117,17 @@ class YapeModel {
     });    
     this.notify();
   }
-
-  enviarDinero (uidDestino, monto) {
-    this.user.accountBalance -= monto;
+  enviarDinero (uidDestino) {
+    this.user.accountBalance -= this.validateMonto;
     this.firebase.database.ref ('account/' + this.user.uid).set (this.user).then ( () => {
       console.log ('cuenta yape actualizada!');
     }) ;
 
     this.firebase.database.ref ('account/' + uidDestino).once ('value').then ( (snap) => {
       var userDestino = snap.val();
-      userDestino.accountBalance += parseInt(monto);
+      let dinero = parseInt(userDestino.accountBalance);
+      dinero = dinero +  this.validateMonto;
+      userDestino.accountBalance = dinero;
       this.firebase.database.ref ('account/' + uidDestino).set (userDestino).then ( () => {
         console.log ('cuenta yape actualizada!');
       }) ;
@@ -285,7 +283,6 @@ class YapeModel {
     this.notify();
     console.log(this.activeCheckboxPhone)
   }
-
   isCompleteRegisterPhone() {
     if ((this.activeCheckboxPhone == true) && (this.user.phone.length == 9)) {
       this.activeNextRegisterPhone = true;
@@ -295,12 +292,11 @@ class YapeModel {
   }
   validateSubmitPayment(e){
     if (!isNaN(e.target.value)) {
-      this.validateMonto = e.target.value;
+      this.validateMonto = parseInt(e.target.value);
       console.log(this.validateMonto)
       this.notify();
     }
   }
-
 }
 
 export default YapeModel;
