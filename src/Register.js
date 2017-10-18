@@ -8,32 +8,53 @@ import {
   onChange
   } from 'react-router-dom'
 import ReactDOM  from 'react-dom';
-// import {Carousel} from 'react-responsive-carousel';
-import {Button} from 'react-materialize';
-import { Grid, Row, Col, Form, FormGroup, InputGroup, FormControl, Image, Checkbox } from 'react-bootstrap';
+// import {Button} from 'react-materialize';
+import { Grid, Row, Col, img, Carousel } from 'react-bootstrap';
 import './Register.css';
-import miImagen  from './images/icon-people.png'
-
 
 // https://www.npmjs.com/package/react-responsive-carousel
 
+const CarouselYape=()=>{
+  return(
+  <Carousel>
+  <Carousel.Item>
+  
+    <img className="imgYape rounded mx-auto d-block" src="http://174.138.48.60:3000/img/icons/icon-people.png"/>
+    <div className="divm text-center">
+    <h4 className="strongm"><strong>Paga a tu amigos</strong></h4>
+    <p className="paragraphm"> Paga a quien quieras desde donde quieras , sin usar efectivo</p>
+    </div>
 
-class Register extends React.Component{
-  constructor(props) {
-		super(props);
-		this.state = {
-			active: true,
-		}
-	}
-  render() {
-        return (
-     
-<Grid className="text-center">
-<div className="item">
-  <img src="data/images/icon-people.png" className="img-respoonsive mily"/>
-  <b><h4 className="less-margin">Paga a tu amigos</h4></b>
-  <p className="less-margin"> Paga a quien quieras desde donde quieras , sin usar efectivo</p>
-</div>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img className="imgYape" src="/images/happy-person.png"/>
+    <div className="divm text-center">
+    <h4 className="strongm"><strong>Sin número de cuenta</strong></h4>
+    <p className="paragraphm">Elige a quién pagar desde tu lista de contactos.</p>
+    </div>
+  
+  </Carousel.Item>
+  <Carousel.Item>
+    <img className="imgYape" src="/images/group-people.png"/>
+    <div className="divm text-center">
+    <h4 className="strongm"><strong>Gratis y Seguro</strong></h4>
+    <p className="paragraphm">La transferencia es inmediata y gratutita de una cuenta a otra.</p>
+    </div>
+
+  </Carousel.Item>
+</Carousel>
+ )}
+
+
+
+const Register = ({model}) => {
+  return (
+    <CarouselYape model={model}/>
+  );
+}
+  
+{/* <Grid className="text-center">
+
 <Form>
 
       <Row className="botonMily">
@@ -60,7 +81,7 @@ class Register extends React.Component{
   
         );
     }
-  }
+  } 
 
     export default Register;
 
