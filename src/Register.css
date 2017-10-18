@@ -1,9 +1,90 @@
+/* *{
+  outline: 1px solid red;
+} */
+.carousel {
+  overflow: hidden;
+  width: 80%;
+  height: auto;
+  perspective: 500px;
+  margin:5% 10% 5% 10%;
+  
+}
+.carousel-indicators {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  z-index: 15;
+  width: 60%;
+  padding-left: 0;
+  margin-left: -30%;
+  text-align: center;
+  border-radius: 5%;
+}
 
+.carousel-indicators li{
+  background: #AAA9A9;
+  border-radius: 50px;
+  width: 18px;
+  height: 18px; 
+  margin: 0 11px;
+  zoom: 1;
+}
+.carousel-indicators .active {
+  background-color: #f64552;
+  width: 18px;
+  height: 18px; 
+  margin: 0 11px;
+}
+.carousel-indicators .active li{
+  width: 20px;
+  height: 20px;
+}
+div> .carousel{
+  height: 400px;
+}
+.divm{
+  margin:2% 0 0 0;
+}
+.strongm{
+  font-size: 1.5rem;
+  position: block;
+}
+.paragraphm{
+  color:#AAA9A9;
+  margin-bottom: 0rem !important;
+  margin-top: 0.5rem !important;
+  font-size: 1.3rem;
+}
+.carousel-control {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  font-size: 1px;
+  color: #fff;
+  text-align: center;
+  text-shadow:transparent;
+  background-color: transparent;
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+.imgYape{
+  width: 60%;
+  height: auto;
+  margin: 0 auto;
+  bottom: 50%;
+}
 
-.less-margin {
+.carousel-inner>.item>.imgYape {
+  display: block;
+  max-width: 90%;
+  height: auto;
+}
+/* .less-margin {
     margin-bottom: 0rem !important;
     margin-top: 0.5rem !important;
-}
+} */
 
 .text-white {
     color: #fff;

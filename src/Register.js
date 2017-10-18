@@ -9,9 +9,8 @@ import {
   } from 'react-router-dom'
 import ReactDOM  from 'react-dom';
 // import {Button} from 'react-materialize';
-import { Grid, Row, Col,  Carousel } from 'react-bootstrap';
+import { Grid, Row, Col, img, Carousel } from 'react-bootstrap';
 import './Register.css';
-import imagen1 from './images/icon-people.png'
 
 // https://www.npmjs.com/package/react-responsive-carousel
 
@@ -19,25 +18,29 @@ const CarouselYape=()=>{
   return(
   <Carousel>
   <Carousel.Item>
-    <img width={900} height={500} alt="900x500" src="http://174.138.48.60:3000/img/icons/icon-people.png"/>
-    <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-    </Carousel.Caption>
+  
+    <img className="imgYape rounded mx-auto d-block" src="http://174.138.48.60:3000/img/icons/icon-people.png"/>
+    <div className="divm text-center">
+    <h4 className="strongm"><strong>Paga a tu amigos</strong></h4>
+    <p className="paragraphm"> Paga a quien quieras desde donde quieras , sin usar efectivo</p>
+    </div>
+
   </Carousel.Item>
   <Carousel.Item>
-    <img width={900} height={500} alt="900x500" src="/images/happy-person.png"/>
-    <Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </Carousel.Caption>
+    <img className="imgYape" src="/images/happy-person.png"/>
+    <div className="divm text-center">
+    <h4 className="strongm"><strong>Sin número de cuenta</strong></h4>
+    <p className="paragraphm">Elige a quién pagar desde tu lista de contactos.</p>
+    </div>
+  
   </Carousel.Item>
   <Carousel.Item>
-    <img width={900} height={500} alt="900x500" src="/images/group-people.png"/>
-    <Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-    </Carousel.Caption>
+    <img className="imgYape" src="/images/group-people.png"/>
+    <div className="divm text-center">
+    <h4 className="strongm"><strong>Gratis y Seguro</strong></h4>
+    <p className="paragraphm">La transferencia es inmediata y gratutita de una cuenta a otra.</p>
+    </div>
+
   </Carousel.Item>
 </Carousel>
  )}
