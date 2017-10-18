@@ -45,46 +45,46 @@ const CarouselYape=()=>{
 </Carousel>
  )}
 
+const ButtonYape=({model})=>{
+  return(
+    <Grid className="text-center">
+        <Row className="botonMily">
+          <Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
+            {
+              <NavLink to={"/phone-validation"} className="button-content  bg-yellow text-white">REGISTRARME</NavLink>
+            }
+          </Col>
+        </Row>
+        <section className="container-fluid downMily">
+        <span>¿Ya tienes cuenta? </span>
+        {
+                <NavLink to={"/login"} className="block milygreen">Inicia Sesión</NavLink>
+           
+            }
+        </section>   
+    </Grid>  
 
+  )
+
+}
 
 const Register = ({model}) => {
   return (
+    <div>
     <CarouselYape model={model}/>
+    <ButtonYape model={model}/>
+    </div>
   );
 }
 export default Register;
   
-{/* <Grid className="text-center">
-
-<Form>
-
-      <Row className="botonMily">
-      <Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-        {
-          this.state.active ?
-            <NavLink to={"/phone-validation"} className="block button-content bg-yellow text-white">REGISTRARME</NavLink>
-            :
-            <NavLink to={"/phone-validation"} className="button-content bg-gray-light text-white">REGISTRARME</NavLink>
-        }
-      </Col>
-    </Row>
-    <section className="container-fluid downMily">
-    <span>¿Ya tienes cuenta?</span>
-    {
-          this.state.active ?
-            <NavLink to={"/login"} className="block milygreen">Inicia Ssesión</NavLink>
-            :
-            <NavLink to={"/login"} className="input-content bg-gray-light text-white">Inicia Sesión</NavLink>
-        }
-    </section>      
-  </Form>
-</Grid>
-  
+export default Register;
+{/* 
         );
     }
   } 
 
-    export default Register;
+ 
 
 // Don't forget to include the css in your page 
 // <link rel="stylesheet" href="carousel.css"/>
