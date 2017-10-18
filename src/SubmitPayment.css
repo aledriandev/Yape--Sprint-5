@@ -13,3 +13,23 @@
     font-size: 1.2em;
     margin-top: 20%;
 }
+
+.contact, .contact:focus {
+    background-image: url(http://174.138.48.60:3000/img/icons/user.png) !important;
+    background-repeat: no-repeat !important;
+    background-size: 8% !important;
+  
+}
+
+.fa-money{
+    position: absolute;
+    margin-left: 30px;
+}
+
+ /* .cash{
+     background-image: url(https://www.google.com.pe/search?q=dinero+icono&source=lnms&tbm=isch&sa=X&ved=0ahUKEwie99qYpfnWAhXGiJAKHQLCA_IQ_AUICigB&biw=1366&bih=613#imgdii=oU1LjoBUJKlPPM:&imgrc=Qhwy4YbkequNsM:) !important;
+    background-repeat: no-repeat !important;
+    background-size: 8% !important;
+    background-position-x: 1px;
+    background-color: transparent;
+}  */

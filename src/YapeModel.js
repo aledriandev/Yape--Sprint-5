@@ -102,6 +102,7 @@ class YapeModel {
     this.activeCheckboxPhone = undefined;
     this.activeNextRegisterPhone = false;
     this.accounts = [];
+    this.validateMonto = "";
 
   }
   
@@ -293,6 +294,14 @@ class YapeModel {
       this.activeNextRegisterPhone = false;
     }
   }
+  validateSubmitPayment(e){
+    if (!isNaN(e.target.value)) {
+      this.validateMonto = e.target.value;
+      console.log(this.validateMonto)
+      this.notify();
+    }
+  }
+
 }
 
 export default YapeModel;
