@@ -14,7 +14,7 @@ import {
 import './SubmitPayment.css';
 
 const SubmitPayment = ({ model }) => {
-	const list = model.accounts.map((item, index) => <li key={item.uid} >{item.email}</li>)
+	const list = model.accounts.map((item, index) => <li className="contact cash" key={item.uid}>{item.email}</li>)
 	const onClick = (e) => {
 		const emailDestino = 'luisa@gmail.com';
 		var uidDestino = -1;
@@ -29,24 +29,25 @@ const SubmitPayment = ({ model }) => {
 		<Grid className="text-center">
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-				<h5 className="titleSubmitPayment">USUARIO</h5>
-				</Col>	
-						
+					<h5 className="titleSubmitPayment">USUARIO</h5>
+				</Col>
+
 			</Row>
-			<br/>
+			<br />
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-				<ul>
-					{list}
-				</ul>
+					<ul>
+						{list}
+					</ul>
 				</Col>
 			</Row>
+			<hr />
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}><h5 >Enviar dinero a: </h5></Col>
 			</Row>
 			<Row className="show-grid">
 				<Col xs={10} xsOffset={1} sm={8} smOffset={2} md={6} mdOffset={3} lg={4} lgOffset={4}>
-					<Input type="text" className="moneda text-center"></Input>
+					<Input type="text" className="moneda text-center" value={model.validateMonto} onChange={e => model.validateSubmitPayment(e)}></Input>
 				</Col>
 			</Row>
 			<Row>
